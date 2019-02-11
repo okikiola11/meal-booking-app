@@ -1,0 +1,178 @@
+.login-btn-ad {
+  padding: 1.5rem 0rem;
+  background: #005066;
+  font-weight: 600;
+  outline: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  width: 97%;
+  text-align: center;
+  margin: 5px;
+  border-radius: 6px;
+}
+.login-btn-ad a {
+  color: #ffffff !important;
+  text-decoration: none;
+}
+.footer-ad {
+  padding: 1em 0em;
+  text-align: center;
+  color: #ffffff;
+  font-size: 1.5rem;
+  background: #002439;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-size: 100% 100%;
+}
+.header-ad {
+  background: #78cce2;
+  color: #ffffff;
+  padding: 5px;
+  font-family: "Nunito Sans", sans-serif;
+  box-shadow: 0 15px 30px 0 rgba(31, 48, 146, 0.11);
+  position: sticky;
+  font-weight: 500;
+  top: 0;
+  z-index: 1034;
+}
+/*****
+****
+*** ADMIN DASHBOARD */
+.dashboard-container {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0px auto;
+}
+.sidebar-menu {
+  position: fixed;
+  float: left;
+  width: 230px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #052963;
+  color: #aaabae;
+  box-shadow: 0px 0px 10px 0px rgb(58, 41, 31);
+  -o-box-shadow: 0px 0px 10px 0px rgb(58, 41, 31);
+  -webkit-box-shadow: 0px 0px 10px 0px rgb(58, 41, 31);
+  -moz-box-shadow: 0px 0px 10px 0px rgb(58, 41, 31);
+  z-index: 999;
+}
+@media only screen and (min-width: 368px) and (max-width: 551px) {
+  .sidebar-menu {
+    position: fixed;
+    float: left;
+    width: 30px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #052963;
+    color: #aaabae;
+    box-shadow: 0px 0px 10px 0px rgb(58, 41, 31);
+    -o-box-shadow: 0px 0px 10px 0px rgb(58, 41, 31);
+    -webkit-box-shadow: 0px 0px 10px 0px rgb(58, 41, 31);
+    -moz-box-shadow: 0px 0px 10px 0px rgb(58, 41, 31);
+  }
+  .sidebar-menu-mn {
+    display: none;
+  }
+  .show-items {
+    display: inline-block;
+  }
+}
+.tooltips {
+  text-decoration: none;
+  color: #fff;
+}
+.logo {
+  width: 100%;
+  padding: 14px 14px;
+  box-sizing: border-box;
+  text-decoration: none !important;
+}
+span#logo h1 {
+  font-size: 2rem;
+  color: #fff;
+  margin: 0;
+  text-decoration: none !important;
+  text-transform: capitalize;
+  font-weight: 300;
+}
+.down p {
+  font-size: 1.3rem;
+  color: #ffffff;
+  padding: 5px 8px;
+}
+#menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+}
+#menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+#menu ul li {
+  background-color: #00c6d7;
+}
+#menu li {
+  position: relative;
+  margin: 0;
+  border-bottom: 1px ridge rgba(6, 26, 68, 0.96);
+  padding: 0;
+  padding: 0;
+}
+#menu li ul {
+  opacity: 0;
+  height: 0px;
+}
+#menu li a {
+  font-style: normal;
+  font-weight: 400;
+  position: relative;
+  display: block;
+  padding: 13px 20px;
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+  z-index: 2;
+  background-color: #021f4e;
+  font-size: 0.9em;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif, sans-serif;
+  border: none;
+  border-left: 4px solid #021f4e;
+}
+#menu li a:hover {
+  color: #ffffff;
+  background-color: #002561;
+  transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
+  border-left: 4px solid #00c6d7;
+}
+#menu li.active > a {
+  background-color: #2b303a;
+  color: #ffffff;
+}
+#menu li ul {
+  position: absolute;
+  visibility: hidden;
+  left: 100%;
+  top: -1px;
+  background-color: #2b303a;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.1s linear;
+  border-top: 1px solid rgba(69, 74, 84, 0.7);
+}
+#menu li:hover > ul {
+  visibility: visible;
+  opacity: 1;
+}
