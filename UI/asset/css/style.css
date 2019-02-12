@@ -68,7 +68,7 @@ nav ul li a:focus {
   padding-bottom: 5px;
 }
 .banner {
-  background-image: url(../images/meal-banner.jpg);
+  background-image: url(../images/home-banner.jpg);
   background-size: 100% 100%;
   background-repeat: no-repeat;
   height: 80vh;
@@ -123,6 +123,37 @@ nav ul li a:focus {
   color: #ffffff;
   margin: auto;
 }
+.container--ml {
+  font-family: "Cormorant Unicase", serif;
+  padding: 30px 0px 70px 0px;
+  font-size: 1.7rem;
+  font-weight: 500;
+  text-align: center;
+}
+.card {
+  border: none;
+  box-shadow: 0 1px 3px 0 #d4d4d5;
+}
+@media (min-width: 992px) {
+  .inner-ml {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  .card-img-top {
+    width: 70%;
+  }
+}
+.btn-add-ml {
+  background-color: #be363a;
+  color: #ffffff;
+  padding: 10px 15px;
+  border-radius: 7px;
+  border: none;
+}
+.card-btn {
+  padding: 20px 0;
+}
 .footer {
   padding: 1em 0em;
   text-align: center;
@@ -158,6 +189,12 @@ nav ul li a:focus {
   font-size: 2rem;
 }
 .menu-banner {
+  background-image: url(../images/menu-banner.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 55vh;
+}
+.meal-banner {
   background-image: url(../images/meal-banner.jpg);
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -193,6 +230,26 @@ nav ul li a:focus {
   float: left;
   
 } */
+.section--type-ad span img {
+  float: left;
+  width: 20%;
+  margin-right: 20px;
+}
+.section--type-ad p {
+  float: left;
+  width: 45%;
+  margin-bottom: 10px;
+}
+.section-title-ad {
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 1.5rem;
+}
+.section-title-s {
+  letter-spacing: 1px;
+  line-height: 18px;
+  font-size: 1.3rem;
+}
 .section--type p {
   float: left;
   width: 70%;
@@ -201,7 +258,24 @@ nav ul li a:focus {
   float: right;
   font-size: 1.8rem;
   font-weight: 600;
-  width: 25%;
+  width: 30%;
+  padding-right: 20px;
+}
+.b-amt a {
+  text-decoration: none;
+}
+.icon-edit {
+  border-radius: 20px;
+  background-color: #78cce2;
+  color: #ffffff;
+  padding: 9px;
+  margin-right: 5px;
+}
+.btn-delete {
+  border-radius: 20px;
+  background: #be363a;
+  color: #ffffff;
+  padding: 9px;
 }
 .menu-txt {
   text-transform: uppercase;
@@ -313,4 +387,26 @@ nav ul li a:focus {
 form {
   display: block;
   margin-top: 0em;
+}
+.container--ml {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.row--ml {
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.inner-ml {
+  margin-top: 1.5rem !important;
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
 }

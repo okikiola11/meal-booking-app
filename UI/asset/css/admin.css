@@ -50,6 +50,10 @@
   height: 100%;
   margin: 0px auto;
 }
+.dashboard-container .left-content {
+  float: right;
+  width: 95%;
+}
 .sidebar-menu {
   position: fixed;
   float: left;
@@ -64,6 +68,126 @@
   -webkit-box-shadow: 0px 0px 10px 0px rgb(58, 41, 31);
   -moz-box-shadow: 0px 0px 10px 0px rgb(58, 41, 31);
   z-index: 999;
+}
+.inner-content-view {
+  margin: 30px 130px 100px 130px;
+  width: 80%;
+}
+.outter-dash--width {
+  margin: 15px auto 0;
+  margin-bottom: 2em;
+  width: 80%;
+}
+.outer-dash__list a {
+  color: #fff;
+  background-color: #5bc0de;
+  border-color: #46b8da;
+  float: right;
+  padding: 10px;
+  margin-bottom: 0.5em;
+  text-decoration: none;
+  border-radius: 3px;
+}
+.login-wrapper-hdr {
+  text-transform: uppercase;
+  color: #000;
+  margin: 15px 10px;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+.form-right__height > div {
+  margin-top: -15px;
+  padding: 10px 0px;
+}
+
+/***
+**
+**TABLE STYLES  */
+.table td,
+.table > tbody > tr > td,
+.table > tbody > tr > th {
+  padding: 15px 0px !important;
+  height: 100%;
+  color: #777;
+  font-size: 1.3rem;
+}
+thead {
+  text-align: left;
+  color: #00c6d7;
+  font-size: 1.6rem;
+}
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+  color: #000000;
+}
+.table-bordered {
+  border: 1px solid #ddd;
+}
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td {
+  border: 1px solid #ddd;
+  text-align: center;
+}
+.table-bordered > thead > tr > th,
+.table-bordered > thead > tr > td {
+  border-bottom-width: 2px;
+  padding: 10px;
+}
+table {
+  width: 100%;
+  max-width: 100%;
+  border-spacing: 0;
+  /* border-collapse: collapse; */
+  /* display: table; */
+  background: #ffffff;
+}
+.outter-dash {
+  padding: 25px;
+  margin: 50px auto 0;
+  width: 450px;
+  margin-bottom: 100px;
+}
+.outter-dash-add {
+  padding: 25px;
+  margin: 50px auto 0;
+  width: 850px;
+  margin-bottom: 100px;
+}
+.form-right__height > div {
+  margin-top: -15px;
+  padding: 10px 0px;
+}
+.outter-dash h4 {
+  font-size: 18px;
+  font-weight: 600;
+}
+.p-login-btn {
+  padding: 1.5rem 0rem;
+  background: #be363a;
+  font-weight: 600;
+  outline: none;
+  border: none;
+  color: #ffffff !important;
+  font-size: 1.5rem;
+  cursor: pointer;
+  width: 97%;
+  text-align: center;
+  margin: 5px;
+  border-radius: 6px;
+}
+.p-login-btn a {
+  text-decoration: none;
+  color: #ffffff !important;
+}
+.text-form-hdr {
+  font-size: 3rem;
+  padding: 12px 0px;
+  text-align: center;
 }
 @media only screen and (min-width: 368px) and (max-width: 551px) {
   .sidebar-menu {
@@ -175,4 +299,37 @@ span#logo h1 {
 #menu li:hover > ul {
   visibility: visible;
   opacity: 1;
+}
+.center-btn {
+  text-align: center;
+  margin-bottom: 35px;
+}
+.center-btn a {
+  text-decoration: none;
+}
+.add-meal-btn {
+  background: #be363a;
+  color: #ffffff;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  padding: 15px;
+  border-radius: 15px;
+}
+.section--space {
+  margin-top: 30px;
+}
+.set-hdr {
+  margin: 25px 0;
+}
+.set-title,
+.ch-date {
+  text-align: center;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+}
+.ch-date {
+  text-transform: lowercase;
+}
+.ch-date-sp {
+  padding-right: 30px;
 }
