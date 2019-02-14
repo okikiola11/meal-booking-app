@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Cormorant+Unicase");
+@import url("https://fonts.googleapis.com/css?family=Felipa");
+
 * {
   box-sizing: border-box;
 }
@@ -34,7 +36,7 @@ header {
 header nav {
   display: flex;
   align-items: center;
-  padding: 0.5rem 1.5rem;
+  padding: 0.1rem 1.5rem;
 }
 header nav ul {
   margin-left: auto;
@@ -46,7 +48,8 @@ header nav ul li {
 }
 header #branding h1 {
   margin: 0px;
-  font-size: 2.5rem;
+  font-size: 3.5rem;
+  font-family: "Felipa", cursive;
 }
 header #branding h1 a {
   text-decoration: none;
@@ -57,7 +60,7 @@ header #branding h1 a {
 nav ul li a {
   text-decoration: none;
   color: #ffffff;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 nav ul li a:hover,
 nav ul li a:focus {
@@ -90,28 +93,56 @@ nav ul li a:focus {
 .clearfix {
   clear: both;
 }
+.sp-cont {
+  margin-bottom: 100px;
+}
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .container-2 {
-    padding: 2rem 0px;
+    padding: 0 0 2rem 0;
     display: flex;
     justify-content: space-evenly;
     font-size: 1.4rem;
+  }
+  .container-2--inner {
+    width: 33.33%;
+  }
+  .container-2--hm {
+    width: 25%;
+  }
+  .container-2--hm img {
+    width: 100%;
   }
 } /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) and (max-width: 1999px) {
   .container-2 {
-    padding: 2rem 0px;
+    padding: 1.6rem 0 3rem 0;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     font-size: 1.4rem;
   }
+  .container-2--inner,
+  .container-2--hm {
+    width: 25%;
+  }
+}
+.txt-hdr-hm {
+  font-size: 3.5rem;
+  text-align: center;
+  margin: 30px;
+  font-family: "Felipa", cursive;
 }
 .container-2--inner {
   font-family: "Cormorant Unicase", serif;
-  padding: 30px 0px 70px 0px;
+  /* padding: 30px 0px 70px 0px; */
   font-size: 1.7rem;
   font-weight: 500;
   text-align: center;
+}
+.container-2--hm {
+  font-family: "Cormorant Unicase", serif;
+  font-size: 1.7rem;
+  font-weight: 500;
+  width: 25%;
 }
 .container-2--inner > div {
   width: 35px;
@@ -140,8 +171,22 @@ nav ul li a:focus {
     flex: 0 0 25%;
     max-width: 25%;
   }
+  .col-ml {
+    -ms-flex: 0 0 33.33%;
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+  }
   .card-img-top {
-    width: 70%;
+    width: 90%;
+  }
+}
+@media (min-width: 500px) {
+  .col-ml {
+    -ms-flex: 0 0 33.33%;
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    display: flex;
+    background: #d4d4d5;
   }
 }
 .btn-add-ml {
@@ -150,6 +195,10 @@ nav ul li a:focus {
   padding: 10px 15px;
   border-radius: 7px;
   border: none;
+}
+a.btn-add-ml {
+  text-decoration: none;
+  text-transform: lowercase !important;
 }
 .card-btn {
   padding: 20px 0;
@@ -199,6 +248,10 @@ nav ul li a:focus {
   background-size: 100% 100%;
   background-repeat: no-repeat;
   height: 55vh;
+}
+.meal-hdr-txt {
+  font-size: 2.5rem;
+  margin: 25px 0px;
 }
 .section-content {
   display: flex;
@@ -276,6 +329,7 @@ nav ul li a:focus {
   background: #be363a;
   color: #ffffff;
   padding: 9px;
+  cursor: pointer;
 }
 .menu-txt {
   text-transform: uppercase;
@@ -338,7 +392,7 @@ nav ul li a:focus {
   margin: 25px 0px;
 }
 .btn-xs {
-  border: 2px solid #be363a;
+  border: 2px solid #4c5f2b;
   border-radius: 30px;
   margin-bottom: 10px;
   padding: 9px;
@@ -347,7 +401,7 @@ nav ul li a:focus {
   text-decoration: none;
 }
 .btn-xs:hover {
-  background: #be363a;
+  background: #4c5f2b;
   color: #ffffff;
   text-decoration: none;
   transition: background 0.4s;
@@ -402,11 +456,89 @@ form {
   margin-right: -15px;
   margin-left: -15px;
 }
-.inner-ml {
+.inner-ml,
+.col-ml {
   margin-top: 1.5rem !important;
   position: relative;
   width: 100%;
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
+}
+
+/***
+**
+***ORDER PAGE  */
+.section--order > .section-order-img {
+  float: left;
+  width: 30%;
+  margin-right: 25px;
+}
+.section--order > p {
+  float: left;
+  width: 45%;
+  margin-right: 20px;
+}
+.b-oder-amt {
+  float: right;
+  font-size: 1.8rem;
+  font-weight: 600;
+  width: 15%;
+  padding-right: 20px;
+}
+.section-c-txt {
+  font-size: 1.5rem;
+  line-height: 25px;
+}
+.section-title-ord {
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 16px;
+  font-size: 1.5rem;
+}
+.section-content--frt-order {
+  width: 900px;
+}
+.order-banner {
+  background-image: url(../images/menu-banner.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 25vh;
+  text-align: center;
+  padding-top: 45px;
+}
+.order-banner > div {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+/***
+***MODAL POPUP  */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.2);
+}
+.modal-content {
+  background-color: #ffffff;
+  margin: 20% auto;
+  padding: 20px;
+  width: 70%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.closebtn {
+  color: #000000;
+  float: right;
+  font-size: 3.5rem;
+}
+.closebtn:hover,
+.closebtn:focus {
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
 }
