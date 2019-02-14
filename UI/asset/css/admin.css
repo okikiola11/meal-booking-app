@@ -158,6 +158,12 @@ table {
   width: 850px;
   margin-bottom: 100px;
 }
+.outter-dash-add-hm {
+  padding: 25px;
+  margin: 50px auto 0;
+  width: 950px;
+  margin-bottom: 100px;
+}
 .form-right__height > div {
   margin-top: -15px;
   padding: 10px 0px;
@@ -333,3 +339,31 @@ span#logo h1 {
 .ch-date-sp {
   padding-right: 30px;
 }
+.box-db {
+  width: 300px;
+  background: #333;
+  color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+}
+.deliv {
+  padding: 5px;
+  background: green;
+  color: #ffffff;
+  border-radius: 5px;
+}
+.pend {
+  padding: 5px;
+  background: #78cce2;
+  color: #ffffff;
+  border-radius: 5px;
+}
+.cancel {
+  padding: 5px;
+  background: #be363a;
+  color: #ffffff;
+  border-radius: 5px;
+}
+/****
+**
+** MODAL POPUP  */
