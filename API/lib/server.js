@@ -2,10 +2,12 @@
 
 var _index = _interopRequireDefault(require("./index"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
 
-var PORT = process.env.port || 3000;
+var PORT = process.env.port || 4000;
 
-_index.default.listen(PORT, function () {
+_index.default.listen(PORT, function() {
   console.log(" Server is running on PORT: ".concat(PORT));
 });
