@@ -6,8 +6,8 @@ function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
 
-var PORT = process.env.port || 4000;
+var port = process.env.PORT || 4000;
 
-_index.default.listen(PORT, function() {
-  console.log(" Server is running on PORT: ".concat(PORT));
+_index.default.listen(port, function() {
+  console.log(" Server is running on PORT: ".concat(port));
 });
