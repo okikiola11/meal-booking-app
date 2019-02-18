@@ -37,58 +37,47 @@
             <div class="sidebar-menu-mn">
 
             <div class="logo">
-            
-                <a href="#" class="sidebar-icon"><span></span> </a> 
-                <a href=""> <span id="logo"><h1>Admin</h1></span></a> 
-            
+
+                <a href="#" class="sidebar-icon"><span></span> </a>
+                <a href=""> <span id="logo"><h1>Admin</h1></span></a>
+
             </div>
 
-            <div class="down">	
-                
+            <div class="down">
+
                 <p class="text">Welcome Admin</p>
-                
+
                 <p><a class="tooltips"><span>Caterer</span></a>
                 </p>
             </div>
 
             <div class="menu">
-        
+
                 <ul id="menu">
-                    
+
                     <li id="menu-dashbrd">
                         <a href="set-menu.html">
-                            <span> Set Menu </span> 
+                            <span> Set Menu </span>
                         </a>
 
                         <ul id="menu-dashbrd-sub"><!-- get this class and hid -->
-                            
+
                             <li id="menu-dashbrd-edit">
                                 <a href="set-menu-form.html">Add Menu</a>
                             </li>
 
-                            <li id="menu-dashbrd-edit">
-                                <a href="edit-menu.html">Edit Menu</a>
-                            </li>
-                        
                         </ul>
-                        
+
                     </li>
-                    
-                    <li id="menu-dashbrd">
-                        <a href="meal-options.html">
-                            <span> Meal Options </span> 
-                        </a>
-                    
-                    </li>
-                    
+
                     <li>
                         <a href="#">
                             <span>Manage Meal</span>
                             <span id="menu-db-fl"> <i class="fal fa-arrow-alt-circle-down"></i> </span>
                         </a>
-                        
+
                         <ul id="menu-dashbrd-sub"><!-- get this class and hid -->
-                            
+
                             <li id="menu-dashbrd-edit">
                                 <a href="add-meal.html">Add Meal</a>
                             </li>
@@ -96,13 +85,13 @@
                             <li id="menu-dashbrd-edit">
                                 <a href="edit-meal.html">Edit Meal</a>
                             </li>
-                            
+
                             <li id="menu-dashbrd-list">
                                 <a href="view-meal.html">View Meal</a>
                             </li>
-                        
+
                         </ul>
-                    
+
                     </li>
 
                     <li>
@@ -110,7 +99,7 @@
                             <span>Summary of Orders</span>
                             <span id="menu-db-fl"> > </span>
                         </a>
-                         
+
                     </li>
 
                     <li>
@@ -120,17 +109,17 @@
                         </a>
 
                         <ul id="menu-dashbrd-sub"><!-- get this class and hid -->
-                            
+
                             <li id="menu-dashbrd-edit">
                                 <a href="order-details.html"> Details of Order </a>
                             </li>
-                            
+
                             <li id="menu-dashbrd-edit">
                                 <a href="order-history.html">Order History</a>
                             </li>
 
                         </ul>
-                            
+
                     </li>
 
                     <li>
@@ -138,7 +127,7 @@
                             <span>Amount of money made</span>
                             <span id="menu-db-fl"> > </span>
                         </a>
-                         
+
                     </li>
 
                 </ul>
@@ -146,7 +135,7 @@
             </div>
 
             </div>
-        
+
         </div>
 
     </div>
@@ -156,7 +145,7 @@
         <div class="inner-content">
 
             <div class="outter-dash-add">
-                
+
                 <div class="center-btn">
                     <a class="add-meal-btn" href="add-meal-form.html" type="submit">
                         Add a New Meal
@@ -164,7 +153,7 @@
                 </div>
 
                 <div>
-                   
+
                     <div class="section--type-ad">
                         <span>
                             <img src="asset/images/fried-chicken.jpg" alt="">
@@ -176,24 +165,36 @@
                             Diced Okro, Fish, Shrimps And Prawns In A Rich Broth.
                             </span>
                         </p>
-                
+
                         <div class="b-amt">1500
                             <a href="edit-meal.html">
                                 <span class="icon-edit"> Edit </span>
                             </a>
                             <span class="btn-delete">
-                                 Delete 
+                                <a class="button" href="#modal-popup">Delete</a>
                             </span>
+
+                            <div id="modal-popup" class="overlay">
+                                <div class="inner-popup">
+                                    <h2>Chicken</h2>
+                                    <a class="close" href="#">&times;</a>
+                                    <div class="content">
+                                        Are you sure, you want to permanently delete this meal
+                                    </div>
+                                    <div class="btn-yes"><a href="">Yes</a></div>
+                                </div>
+                            </div>
+
                         </div>
 
                         <div class="clearfix"></div>
-                    
+
                     </div>
 
                 </div>
 
                 <div class="section--space">
-                   
+
                     <div class="section--type-ad">
                         <span>
                             <img src="asset/images/rice-chicken.jpg" alt="">
@@ -205,23 +206,35 @@
                             Diced Okro, Fish, Shrimps And Prawns In A Rich Broth.
                             </span>
                         </p>
-                
+
                         <div class="b-amt">1500
                             <a href="edit-meal.html">
                                 <span class="icon-edit"> Edit </span>
                             </a>
                             <span class="btn-delete">
-                                Delete 
-                           </span>
+                                <a class="button" href="#modal-popup">Delete</a>
+                            </span>
+
+                            <div id="modal-popup" class="overlay">
+                                <div class="inner-popup">
+                                    <h2>Chicken</h2>
+                                    <a class="close" href="#">&times;</a>
+                                    <div class="content">
+                                        Are you sure, you want to permanently delete this meal
+                                    </div>
+                                    <div class="btn-yes"><a href="">Yes</a></div>
+                                </div>
+                            </div>
+
                         </div>
-                
+
                         <div class="clearfix"></div>
                     </div>
 
                 </div>
 
                 <div class="section--space">
-                   
+
                     <div class="section--type-ad">
                         <span>
                             <img src="asset/images/rice-with-beef.jpg" alt="">
@@ -233,23 +246,34 @@
                             Diced Okro, Fish, Shrimps And Prawns In A Rich Broth.
                             </span>
                         </p>
-                
+
                         <div class="b-amt">1500
                             <a href="edit-meal.html">
                                 <span class="icon-edit"> Edit </span>
                             </a>
                             <span class="btn-delete">
-                                Delete 
-                           </span>
+                                <a class="button" href="#modal-popup">Delete</a>
+                            </span>
+
+                            <div id="modal-popup" class="overlay">
+                                <div class="inner-popup">
+                                    <h2>Chicken</h2>
+                                    <a class="close" href="#">&times;</a>
+                                    <div class="content">
+                                        Are you sure, you want to permanently delete this meal
+                                    </div>
+                                    <div class="btn-yes"><a href="">Yes</a></div>
+                                </div>
+                            </div>
                         </div>
-                
+
                         <div class="clearfix"></div>
                     </div>
 
                 </div>
 
                 <div class="section--space">
-                   
+
                     <div class="section--type-ad">
                         <span>
                             <img src="asset/images/prawn.jpg" alt="">
@@ -261,23 +285,34 @@
                             Diced Okro, Fish, Shrimps And Prawns In A Rich Broth.
                             </span>
                         </p>
-                
+
                         <div class="b-amt">1500
                             <a href="edit-meal.html">
                                 <span class="icon-edit"> Edit </span>
                             </a>
                             <span class="btn-delete">
-                                Delete 
-                           </span>
+                                <a class="button" href="#modal-popup">Delete</a>
+                            </span>
+
+                            <div id="modal-popup" class="overlay">
+                                <div class="inner-popup">
+                                    <h2>Chicken</h2>
+                                    <a class="close" href="#">&times;</a>
+                                    <div class="content">
+                                        Are you sure, you want to permanently delete this meal
+                                    </div>
+                                    <div class="btn-yes"><a href="">Yes</a></div>
+                                </div>
+                            </div>
                         </div>
-                
+
                         <div class="clearfix"></div>
                     </div>
 
                 </div>
 
                 <div class="section--space">
-                   
+
                     <div class="section--type-ad">
                         <span>
                             <img src="asset/images/meal1.jpg" alt="">
@@ -289,16 +324,27 @@
                             Diced Okro, Fish, Shrimps And Prawns In A Rich Broth.
                             </span>
                         </p>
-                
+
                         <div class="b-amt">1500
                             <a href="edit-meal.html">
                                 <span class="icon-edit"> Edit </span>
                             </a>
                             <span class="btn-delete">
-                                Delete 
+                                <a class="button" href="#modal-popup">Delete</a>
                             </span>
+
+                            <div id="modal-popup" class="overlay">
+                                <div class="inner-popup">
+                                    <h2>Chicken</h2>
+                                    <a class="close" href="#">&times;</a>
+                                    <div class="content">
+                                        Are you sure, you want to permanently delete this meal
+                                    </div>
+                                    <div class="btn-yes"><a href="">Yes</a></div>
+                                </div>
+                            </div>
                         </div>
-                
+
                         <div class="clearfix"></div>
                     </div>
 

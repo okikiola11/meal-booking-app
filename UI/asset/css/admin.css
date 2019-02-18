@@ -40,6 +40,14 @@
 /*****
 ****
 *** ADMIN DASHBOARD */
+.form-ad-st {
+  margin-top: 5%;
+  font-size: 3.5rem !important;
+  text-align: center;
+}
+.th-ad {
+  text-align: center !important;
+}
 .dashboard-container {
   position: relative;
   top: 0;
@@ -109,8 +117,8 @@
 .table > tbody > tr > th {
   padding: 15px 0px !important;
   height: 100%;
-  color: #777;
-  font-size: 1.3rem;
+  color: #000;
+  font-size: 1.55rem;
 }
 thead {
   text-align: left;
@@ -276,7 +284,7 @@ span#logo h1 {
   white-space: nowrap;
   z-index: 2;
   background-color: #021f4e;
-  font-size: 0.9em;
+  font-size: 1.2em;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif, sans-serif;
   border: none;
   border-left: 4px solid #021f4e;
@@ -284,7 +292,8 @@ span#logo h1 {
 #menu li a:hover {
   color: #ffffff;
   background-color: #002561;
-  transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
+  transition: color 250ms ease-in-out;
+  background-color 250ms ease-in-out;
   border-left: 4px solid #00c6d7;
 }
 #menu li.active > a {
@@ -367,3 +376,91 @@ span#logo h1 {
 /****
 **
 ** MODAL POPUP  */
+
+.btn-delete {
+  border-radius: 20px;
+  background: #be363a;
+  color: #ffffff;
+  padding: 9px;
+  cursor: pointer;
+}
+.button {
+  font-size: 1em;
+  color: #fff;
+  border: 2px solid #be363a;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.button:hover {
+  background: #be363a;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+.inner-popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+.btn-yes {
+  background: #be363a;
+  color: #fff !important;
+  padding: 8px;
+  margin: 10px 0;
+  text-align: center;
+  width: 20%;
+  border-radius: 10px;
+  font-weight: 500;
+}
+.btn-yes a {
+  color: #fff;
+  text-decoration: none;
+}
+.inner-popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.inner-popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  text-decoration: none;
+  color: #333;
+}
+.inner-popup .close:hover {
+  color: #be363a;
+  font-weight: bold;
+}
+.inner-popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 700px) {
+  .btn-delete {
+    width: 70%;
+  }
+  .inner-popup {
+    width: 70%;
+  }
+}
