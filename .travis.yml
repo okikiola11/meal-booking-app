@@ -1,11 +1,9 @@
-language: node js
+language: node_js
 node_js:
   - "stable"
-before_script:
-  - npm install
-script:
-  - npm test
+cache:
+  directories:
+    - "node_modules"
 after_success:
-  - npm run coverage
-  - npm run coveralls
-
+  - ./node_modules/.bin/jscoverage lib lib-cov
+  - ./node_modules/.bin/mocha ./lib/tests/*.test.js -R mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js
