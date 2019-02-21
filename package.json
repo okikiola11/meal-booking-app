@@ -1,0 +1,32 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./API/lib/server.js",
+  "dependencies": {
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "body-parser": "^1.18.3",
+    "eslint-plugin-import": "^2.16.0",
+    "express": "^4.16.4",
+    "express-validator": "^5.3.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.3",
+    "chai": "^4.2.0",
+    "eslint": "^5.12.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "mocha": "^5.2.0",
+    "supertest": "^3.4.2"
+  },
+  "scripts": {
+    "start": "node ./API/lib/server.js",
+    "test-watch": "nodemon --exec  \"npm test\"",
+    "test": "mocha ./lib/tests/*.test.js",
+    "build": "./node_modules/.bin/babel ./API/source -d ./API/lib",
+    "test-dev": "npm run build && npm run test-watch"
+  },
+  "author": "Apelehin Okikiola",
+  "license": "ISC"
+}
