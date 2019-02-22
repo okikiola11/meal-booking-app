@@ -1,4 +1,4 @@
-import mealData from "../utils/mealData";
+import mealData from '../utils/mealData';
 
 export default class mealModel {
   static findById(id) {
