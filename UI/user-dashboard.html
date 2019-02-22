@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="Meal Booking application" />
+    <meta name="keywords" content="Meal Booking application" />
+    <meta name="author" content="Apelehin Okikiola" />
+    <title>Book-A-Meal:: Admin Dashboard</title>
+    <link rel="stylesheet" href="asset/css/user.css" />
+
+    <link rel="stylesheet" href="asset/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Cinzel|Rajdhani"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header-ad">
+      <nav>
+        <div id="branding">
+          <h1><a href="../index.html">Book-a-Meal </a></h1>
+        </div>
+
+        <ul>
+          <li><a href="menu-list.html">Menu</a></li>
+          <li><a href="meals.html">Meals</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="user-container">
+      <div class="user-menu">
+        <div class="sidebar-menu-mn">
+          <div class="logo">
+            <a href="#" class="sidebar-icon"><span></span> </a>
+            <a href="">
+              <span id="logo"><h1></h1>
+              </span>
+            </a>
+          </div>
+
+          <div class="down">
+            <p class="text">Welcome <span>customer</span></p>
+          </div>
+
+          <div class="menu">
+
+              <ul id="menu">
+                <li><a href="user-dashboard.html">Order History</a></li>
+                <li><a href="user-profile.html">Check Profile</a></li>
+                <li><a href="timeline.html">Timeline</a></li>
+                <li><a href="notifications.html">Notifications</a></li>
+              </ul>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="left-content">
+
+        <div class="inner-content">
+
+          <div class="outter-dash-prr">
+
+            <span class="user-das-hdr">My Orders</span>
+
+            <div>
+
+                <form class="form-right__height">
+
+                    <table class="table table-bordered">
+
+                        <thead>
+                            <tr>
+                                <th>Order Id</th>
+                                <th>Menu type</th>
+                                <th>Meal</th>
+                                <th>Orders</th>
+                                <th>Amount</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>1111</td>
+                                <td>EXTRA</td>
+                                <td>Fried Rice</td>
+                                <td>10</td>
+                                <td>12500</td>
+                                <td>20-10-2013</td>
+                                <td><span class="deliv">Delivered</span></td>
+                             </tr>
+
+                             <tr>
+                                <td>1112</td>
+                                <td>SPECIALS</td>
+                                <td>Amala</td>
+                                <td>5</td>
+                                <td>8500</td>
+                                <td>01-01-2019</td>
+                                <td><span class="pend">Pending</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>1113</td>
+                                <td>FOREIGN</td>
+                                <td>American fries</td>
+                                <td>15</td>
+                                <td>12500</td>
+                                <td>20-10-2013</td>
+                                <td><span class="pend">Pending</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>1115</td>
+                                <td>DELICACY</td>
+                                <td>Chinese rice</td>
+                                <td>5</td>
+                                <td>12500</td>
+                                <td>20-10-2013</td>
+                                <td><span class="cancel">Cancelled</span></td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                    <div class="modal">
+                        <div class="modal-content">
+                            <span class="close-button">&times;</span>
+                            <h1></h1>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div class="clearfix"></div>
+      </div>
+      <div class="clearfix"></div>
+    </section>
+
+    <footer>
+      <div class="footer-user">
+        2019 Meal Booking Application. All Rights Reserved
+      </div>
+    </footer>
+
+  </body>
+</html>
