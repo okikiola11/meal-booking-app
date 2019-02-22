@@ -40,7 +40,7 @@ var orderController = {
 
     return res.status(201).json({
       status: 201,
-      message: "New order has been added",
+      message: 'New order has been added',
       data: [newlyCreatedOrder]
     });
   },
@@ -58,7 +58,7 @@ var orderController = {
 
     if (orderFound === undefined || orderFound === null) {
       var error = {};
-      error.mgs = "Order Id not found";
+      error.mgs = 'Order Id not found';
       return res.status(404).send({
         status: 404,
         error: error
@@ -80,7 +80,7 @@ var orderController = {
 
     return res.status(200).send({
       status: 200,
-      message: "Order has been successfully modified",
+      message: 'Order has been successfully modified',
       data: [updatedOrder]
     });
   }
