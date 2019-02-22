@@ -39,14 +39,14 @@ var MenuController = {
     if (data) {
       return res.status(201).json({
         status: 201,
-        message: "New menu has been added",
+        message: 'New menu has been added',
         data: [newlyCreatedMenu]
       });
     }
 
     return res.status(500).json({
       status: 500,
-      message: "could not save your data"
+      message: 'could not save your data'
     });
   }
 };
