@@ -39,14 +39,14 @@ var MealController = {
     if (data) {
       return res.status(201).json({
         status: 201,
-        message: "New meal has been added",
+        message: 'New meal has been added',
         data: [newlyCreatedMeal]
       });
     }
 
     return res.status(500).json({
       status: 500,
-      message: "something went wrong while trying to save your data"
+      message: 'something went wrong while trying to save your data'
     });
   },
   getSingleMeal: function getSingleMeal(req, res) {
@@ -56,7 +56,7 @@ var MealController = {
       if (mealData.id === id) {
         return res.status(200).send({
           status: 200,
-          message: "Meal has been retrieved successfully",
+          message: 'Meal has been retrieved successfully',
           data: [mealData]
         });
       }
@@ -64,7 +64,7 @@ var MealController = {
 
     return res.status(404).send({
       status: 404,
-      message: "Meal Id does not exist"
+      message: 'Meal Id does not exist'
     });
   },
   deleteMeal: function deleteMeal(req, res) {
@@ -76,7 +76,7 @@ var MealController = {
     });
 
     if (removedIndex === -1) {
-      error.mgs = "Oooops! no record with such Id";
+      error.mgs = 'Oooops! no record with such Id';
       return res.status(404).json({
         status: 404,
         error: error
@@ -87,7 +87,7 @@ var MealController = {
 
     return res.status(200).json({
       status: 200,
-      message: "Meal record deleted successfully",
+      message: 'Meal record deleted successfully',
       data: []
     });
   },
@@ -105,7 +105,7 @@ var MealController = {
 
     if (mealFound === undefined || mealFound === null) {
       var error = {};
-      error.mgs = "record id not found";
+      error.mgs = 'record id not found';
       return res.status(404).send({
         status: 404,
         error: error
@@ -125,7 +125,7 @@ var MealController = {
 
     return res.status(200).send({
       status: 200,
-      message: "Meal has been successfully updated",
+      message: 'Meal has been successfully updated',
       data: [updatedMeal]
     });
   }
