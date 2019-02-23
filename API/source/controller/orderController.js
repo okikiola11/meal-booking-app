@@ -1,10 +1,10 @@
-import orderData from "../utils/orderData";
+import orderData from '../utils/orderData';
 
 const orderController = {
   fetchAllOrder(req, res) {
     return res.status(200).json({
       status: 200,
-      data: orderData
+      data: orderData,
     });
   },
 
@@ -16,7 +16,7 @@ const orderController = {
       order,
       price,
       customerEmail,
-      imageUrl
+      imageUrl,
     } = req.body;
 
     const newlyCreatedOrder = {
@@ -27,15 +27,15 @@ const orderController = {
       order,
       price,
       customerEmail,
-      imageUrl
+      imageUrl,
     };
 
     const data = orderData.push(newlyCreatedOrder);
 
     return res.status(201).json({
       status: 201,
-      message: "New order has been added",
-      data: [newlyCreatedOrder]
+      message: 'New order has been added',
+      data: [newlyCreatedOrder],
     });
   },
 
@@ -53,11 +53,11 @@ const orderController = {
 
     if (orderFound === undefined || orderFound === null) {
       const error = {};
-      error.mgs = "Order Id not found";
+      error.mgs = 'Order Id not found';
 
       return res.status(404).send({
         status: 404,
-        error
+        error,
       });
     }
 
@@ -69,17 +69,17 @@ const orderController = {
       order: req.body.order || orderFound.order,
       price: req.body.price || orderFound.price,
       customerEmail: req.body.customerEmail || orderFound.customerEmail,
-      imageUrl: req.body.imageUrl || orderFound.imageUrl
+      imageUrl: req.body.imageUrl || orderFound.imageUrl,
     };
 
     orderData.splice(orderIndex, 1, updatedOrder);
 
     return res.status(200).send({
       status: 200,
-      message: "Order has been successfully modified",
-      data: [updatedOrder]
+      message: 'Order has been successfully modified',
+      data: [updatedOrder],
     });
-  }
+  },
 };
 
 export default orderController;
