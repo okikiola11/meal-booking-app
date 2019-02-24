@@ -33,7 +33,7 @@
     "test-dev": "npm test && nyc report --reporter=text-lcov | coveralls",
     "coverage": "npm test && nyc report --reporter=text-lcov | coveralls",
     "report-coverage": "cat ./coverage/lcov.info | coveralls",
-    "coveralls": "nyc --reporter=lcov --reporter=text-lcov npm test"
+    "coveralls": "nyc --reporter=lcov --reporter=text-lcov "
   },
   "author": "Apelehin Okikiola",
   "license": "ISC"

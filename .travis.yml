@@ -9,6 +9,6 @@ cache:
   directories:
     - "node_modules"
 after_success:
-  - npm run coveralls
-  - npm run report-coverage | node ./node_modules/coveralls/bin/coveralls.js
+  - npm run test-dev
+  - npm run coveralls | node ./node_modules/coveralls/bin/coveralls.js
   - ./node_modules/.bin/mocha ./API/lib/tests/*.test.js -R mocha-lcov-reporter | node ./node_modules/coveralls/bin/coveralls.js
