@@ -1,5 +1,4 @@
 /API/node_modules/
 /node_modules/
 .coveralls.yml
-/coverage
 .nyc_output
