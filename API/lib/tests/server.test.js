@@ -15,6 +15,25 @@ var _orderData = _interopRequireDefault(require("../utils/orderData"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var expect = _chai.default.expect;
+describe('Test case for the default for the meal booking route /', function () {
+  describe('/ testing for response', function () {
+    it('should return a welcome message to the user', function (done) {
+      (0, _supertest.default)(_index.default).get('/').expect(200).expect(function (response) {
+        expect(response.text).to.be.a('string').to.equal('Welcome, to the Meal Booking Application!');
+      }).end(done);
+    });
+  });
+  describe('/ testing for endpoints that do not exist', function () {
+    it('should return 404 error', function (done) {
+      (0, _supertest.default)(_index.default).get('/google').expect(404).expect(function (response) {
+        expect(response.body).to.be.an('object').to.eql({
+          status: 404,
+          message: 'The endpoint you have requested does not exist on this server'
+        }).to.have.all.keys('status', 'message');
+      }).end(done);
+    });
+  });
+});
 describe('Test case for meal route', function () {
   describe('api/v1/meals/1 testing for response', function () {
     it('should get a meal option', function (done) {
@@ -24,6 +43,14 @@ describe('Test case for meal route', function () {
           message: 'Meal has been retrieved successfully',
           data: [_mealData.default[0]]
         }).to.have.all.keys('status', 'data', 'message');
+      }).end(done);
+    });
+    it('should return an error message if the meal does not exist', function (done) {
+      (0, _supertest.default)(_index.default).get('/api/v1/meals/70').expect(404).expect(function (response) {
+        expect(response.body).to.be.an('object').to.eql({
+          status: 404,
+          message: 'Meal Id does not exist'
+        }).to.have.all.keys('status', 'message');
       }).end(done);
     });
   });
@@ -60,6 +87,14 @@ describe('Test case for meal route', function () {
         }).to.have.all.keys('status', 'message', 'data');
       }).end(done);
     });
+    it('should return an error message if the items deleted does not exist', function (done) {
+      (0, _supertest.default)(_index.default).delete('/api/v1/meals/70').expect(404).expect(function (response) {
+        expect(response.body).to.be.an('object').to.eql({
+          status: 404,
+          error: 'Oooops! no record with such Id'
+        }).to.have.all.keys('status', 'error');
+      }).end(done);
+    });
   });
   describe('Update a meal option', function () {
     it('should update a specific meal', function (done) {
@@ -84,6 +119,20 @@ describe('Test case for meal route', function () {
         }).to.have.all.keys('status', 'message', 'data');
       }).end(done);
     });
+    it('should return an error message if the items does not update', function (done) {
+      (0, _supertest.default)(_index.default).put('/api/v1/meals/70').send({
+        name: 'Rice with beef',
+        size: 'medium',
+        price: '1500',
+        summary: 'Rice belongs to the carbohydrate family',
+        imageUrl: 'meal1.jpg'
+      }).set('Accept', 'application/json').expect(404).expect(function (response) {
+        expect(response.body).to.be.an('object').to.eql({
+          status: 404,
+          error: 'record id not found'
+        }).to.have.all.keys('status', 'error');
+      }).end(done);
+    });
   });
   describe('Delete a meal option', function () {
     it('should delete a specific meal', function (done) {
@@ -93,6 +142,14 @@ describe('Test case for meal route', function () {
           message: 'Meal record deleted successfully',
           data: []
         }).to.have.all.keys('status', 'data', 'message');
+      }).end(done);
+    });
+    it('should return an error message if the items deleted does not exist', function (done) {
+      (0, _supertest.default)(_index.default).delete('/api/v1/meals/70').expect(404).expect(function (response) {
+        expect(response.body).to.be.an('object').to.eql({
+          status: 404,
+          error: 'Oooops! no record with such Id'
+        }).to.have.all.keys('status', 'error');
       }).end(done);
     });
   });
@@ -199,6 +256,22 @@ describe('Test case for Order route', function () {
             imageUrl: 'meal1.jpg'
           }]
         }).to.have.all.keys('status', 'message', 'data');
+      }).end(done);
+    });
+    it('should return an error message if the order does not exist', function (done) {
+      (0, _supertest.default)(_index.default).put('/api/v1/order/70').send({
+        menuType: 'Special',
+        meal: 'Rice with beef',
+        size: 'medium',
+        order: 10,
+        price: 1500,
+        customerEmail: 'shade@gmail.com',
+        imageUrl: 'meal1.jpg'
+      }).set('Accept', 'application/json').expect(404).expect(function (response) {
+        expect(response.body).to.be.an('object').to.eql({
+          status: 404,
+          error: 'Order Id not found'
+        }).to.have.all.keys('status', 'error');
       }).end(done);
     });
   });

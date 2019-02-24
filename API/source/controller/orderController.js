@@ -30,12 +30,22 @@ const orderController = {
       imageUrl,
     };
 
-    const data = orderData.push(newlyCreatedOrder);
+    const oldOrderLength = orderData.length;
 
-    return res.status(201).json({
-      status: 201,
-      message: 'New order has been added',
-      data: [newlyCreatedOrder],
+    orderData.push(newlyCreatedOrder);
+    const newOrderLength = orderData.length;
+
+    if (newOrderLength > oldOrderLength) {
+      return res.status(201).json({
+        status: 201,
+        message: 'New order has been added',
+        data: [newlyCreatedOrder],
+      });
+    }
+
+    return res.status(500).json({
+      status: 500,
+      message: 'something went wrong while trying to save your order',
     });
   },
 
@@ -52,12 +62,10 @@ const orderController = {
     });
 
     if (orderFound === undefined || orderFound === null) {
-      const error = {};
-      error.mgs = 'Order Id not found';
 
       return res.status(404).send({
         status: 404,
-        error,
+        error: 'Order Id not found'
       });
     }
 
