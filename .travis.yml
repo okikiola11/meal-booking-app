@@ -10,4 +10,5 @@ cache:
     - "node_modules"
 after_success:
   - npm run coveralls
-  - ./node_modules/.bin/mocha ./API/lib/tests/*.test.js -R mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js
+  - npm run report-coverage | node ./node_modules/coveralls/bin/coveralls.js
+  - ./node_modules/.bin/mocha ./API/lib/tests/*.test.js -R mocha-lcov-reporter | node ./node_modules/coveralls/bin/coveralls.js
