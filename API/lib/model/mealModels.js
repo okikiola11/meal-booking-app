@@ -5,33 +5,17 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _mealData = _interopRequireDefault(require("../utils/mealData"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+var mealModel = function mealModel() {
+  _classCallCheck(this, mealModel);
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-var mealModel =
-/*#__PURE__*/
-function () {
-  function mealModel() {
-    _classCallCheck(this, mealModel);
-  }
-
-  _createClass(mealModel, null, [{
-    key: "findById",
-    value: function findById(id) {
-      return _mealData.default.find(function (data) {
-        return data.id === +id;
-      });
-    }
-  }]);
-
-  return mealModel;
-}();
+  this.id = null;
+  this.name = null;
+  this.size = null;
+  this.price = null;
+  this.summary = null;
+  this.imageUrl = null;
+};
 
 exports.default = mealModel;

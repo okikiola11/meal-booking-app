@@ -35,13 +35,23 @@ var orderController = {
       customerEmail: customerEmail,
       imageUrl: imageUrl
     };
+    var oldOrderLength = _orderData.default.length;
 
-    var data = _orderData.default.push(newlyCreatedOrder);
+    _orderData.default.push(newlyCreatedOrder);
 
-    return res.status(201).json({
-      status: 201,
-      message: "New order has been added",
-      data: [newlyCreatedOrder]
+    var newOrderLength = _orderData.default.length;
+
+    if (newOrderLength > oldOrderLength) {
+      return res.status(201).json({
+        status: 201,
+        message: 'New order has been added',
+        data: [newlyCreatedOrder]
+      });
+    }
+
+    return res.status(500).json({
+      status: 500,
+      message: 'something went wrong while trying to save your order'
     });
   },
   modifyAnOrder: function modifyAnOrder(req, res) {
@@ -57,11 +67,9 @@ var orderController = {
     });
 
     if (orderFound === undefined || orderFound === null) {
-      var error = {};
-      error.mgs = "Order Id not found";
       return res.status(404).send({
         status: 404,
-        error: error
+        error: 'Order Id not found'
       });
     }
 
@@ -80,7 +88,7 @@ var orderController = {
 
     return res.status(200).send({
       status: 200,
-      message: "Order has been successfully modified",
+      message: 'Order has been successfully modified',
       data: [updatedOrder]
     });
   }

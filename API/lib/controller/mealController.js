@@ -7,8 +7,6 @@ exports.default = void 0;
 
 var _mealData = _interopRequireDefault(require("../utils/mealData"));
 
-var _mealModels = _interopRequireDefault(require("../model/mealModels"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var MealController = {
@@ -33,42 +31,46 @@ var MealController = {
       summary: summary,
       imageUrl: imageUrl
     };
+    var oldLength = _mealData.default.length;
 
-    var data = _mealData.default.push(newlyCreatedMeal);
+    _mealData.default.push(newlyCreatedMeal);
 
-    if (data) {
+    var newLength = _mealData.default.length;
+
+    if (newLength > oldLength) {
       return res.status(201).json({
         status: 201,
-        message: "New meal has been added",
+        message: 'New meal has been added',
         data: [newlyCreatedMeal]
       });
     }
 
     return res.status(500).json({
       status: 500,
-      message: "something went wrong while trying to save your data"
+      message: 'something went wrong while trying to save your data'
     });
   },
   getSingleMeal: function getSingleMeal(req, res) {
     var id = parseInt(req.params.id, 10);
 
-    _mealData.default.map(function (mealData) {
-      if (mealData.id === id) {
-        return res.status(200).send({
-          status: 200,
-          message: "Meal has been retrieved successfully",
-          data: [mealData]
-        });
-      }
+    var meal = _mealData.default.find(function (singleMeal) {
+      return singleMeal.id === id;
     });
+
+    if (meal) {
+      return res.status(200).send({
+        status: 200,
+        message: 'Meal has been retrieved successfully',
+        data: [meal]
+      });
+    }
 
     return res.status(404).send({
       status: 404,
-      message: "Meal Id does not exist"
+      message: 'Meal Id does not exist'
     });
   },
   deleteMeal: function deleteMeal(req, res) {
-    var error = {};
     var id = parseInt(req.params.id, 10);
 
     var removedIndex = _mealData.default.findIndex(function (data) {
@@ -76,10 +78,9 @@ var MealController = {
     });
 
     if (removedIndex === -1) {
-      error.mgs = "Oooops! no record with such Id";
       return res.status(404).json({
         status: 404,
-        error: error
+        error: 'Oooops! no record with such Id'
       });
     }
 
@@ -87,7 +88,7 @@ var MealController = {
 
     return res.status(200).json({
       status: 200,
-      message: "Meal record deleted successfully",
+      message: 'Meal record deleted successfully',
       data: []
     });
   },
@@ -104,11 +105,9 @@ var MealController = {
     });
 
     if (mealFound === undefined || mealFound === null) {
-      var error = {};
-      error.mgs = "record id not found";
       return res.status(404).send({
         status: 404,
-        error: error
+        error: 'record id not found'
       });
     }
 
@@ -125,7 +124,7 @@ var MealController = {
 
     return res.status(200).send({
       status: 200,
-      message: "Meal has been successfully updated",
+      message: 'Meal has been successfully updated',
       data: [updatedMeal]
     });
   }
