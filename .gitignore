@@ -1,4 +1,6 @@
+.coveralls.yml/
+.codeclimate.yml/
 /API/node_modules/
 /node_modules/
-/.coveralls.yml
-/.nyc_output
+coverage/
+.nyc_output/
