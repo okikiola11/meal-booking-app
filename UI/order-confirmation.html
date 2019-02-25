@@ -1,66 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="description" content="Meal Booking application" />
-    <meta name="keywords" content="Meal Booking application" />
-    <meta name="author" content="Apelehin Okikiola" />
-    <title>Book-A-Meal</title>
-    <link rel="stylesheet" href="asset/css/style.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Cinzel|Rajdhani"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
 
-      <div class="bg-order-cc">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="description" content="Meal Booking application" />
+  <meta name="keywords" content="Meal Booking application" />
+  <meta name="author" content="Apelehin Okikiola" />
+  <title>Book-A-Meal</title>
+  <link rel="stylesheet" href="asset/css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Cinzel|Rajdhani" rel="stylesheet" />
+</head>
 
-        <p class="rev-hdr">Review Order</dp>
+<body>
 
-        <div class="container-ml-conf">
+  <header style="padding:8px 0px; ">
+    <nav>
+      <div id="branding">
+        <h1><a href="../index.html"> Book-a-Meal </a></h1>
+      </div>
 
-          <div class="rev-container">
+      <ul>
+        <li><a href="user-dashboard.html">Shade Wiiliams > </a></li>
+      </ul>
+    </nav>
 
-            <div class="rev-hdr-inner">Order Details</div>
+  </header>
 
-            <div>
-              <label for="" class="lab-del">Delivery Address</label>
-              <input
-                type="text"
-                id="inputbx"
-                placeholder="Ahmadu Bello way, ikeja"
-              />
-            </div>
+  <div class="bg-order-cc">
 
-            <div>
-              <label for="" class="lab-del">Date</label>
-              <input type="text" id="inputbx" placeholder="20-01-2019 10:12:12" />
-            </div>
+    <p class="rev-hdr">Place Order</p>
 
-            <div>
-              <label for="" class="lab-del">Comment</label>
-              <textarea name="" id="inputbx" cols="30" rows="10"></textarea>
-            </div>
+    <div class="container-ml-bg">
 
+      <div class="container-ml-conf">
+
+        <div class="rev-container">
+
+          <div class="rev-hdr-inner">Order Details</div>
+
+          <div>
+            <label for="" class="lab-del">Full Name :</label>
+            <label for="" class="lab-del-i"> Shade Williams </label>
           </div>
 
-          <div class="rev-container">
-
+          <div class="l-conf">
+            <label for="" class="lab-del"> Email Address :</label>
+            <label for="" class="lab-del-i"> shade.okoya @gmail.com </label>
           </div>
 
+          <div class="l-conf">
+            <label for="" class="lab-del"> Phone Number :</label>
+            <label for="" class="lab-del-i"> 08023182919 </label>
+          </div>
+
+          <div class="l-conf">
+            <label for="" class="lab-del">Date : </label>
+            <label for="" class="lab-del-i">20-01-2019 10:12:12</label>
+          </div>
+
+          <div class="l-conf">
+            <label for="" class="lab-del">Delivery Address :</label>
+            <label for="" class="lab-del-i">Ahmadu bello way</label>
+          </div>
 
         </div>
 
+        <div class="rev-container">
 
-      <button class="checkout-click-btn"><a href=""> Checkout </a></button>
+          <div class="l-conf">
+            <label for="" class="lab-amt"> Total Amount :</label>
+            <label for="" class="lab-amt"> 3,800 </label>
+          </div>
+
+          <div>
+            <label for="" class="lab-amt">Payment Method :</label>
+            <label class="lab-del">Cash payment on delivery</label>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="d-inline-btn">
+        <span class="checkout-click-btn"><a href="#modal-checkout"> Checkout </a></span>
+      </div>
+
+      <div id="modal-checkout" class="overlay">
+
+        <div class="inner-popup-chkout">
+          <h2>Thank you for your order. Order will be delivered shortly </h2>
+          <a class="close" href="#">&times;</a>
+
+          <div class="clearfix"></div>
+        </div>
 
       </div>
 
     </div>
 
+  </div>
 
-  </body>
+  <footer>
+    <div class="footer">
+      2019 Meal Booking Application. All Rights Reserved
+    </div>
+  </footer>
+
+</body>
+
 </html>
