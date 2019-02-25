@@ -29,3 +29,5 @@ after_script:
 
 after_success:
   - npm run test-dev
+  - npm install codeclimate-test-reporter
+  - codeclimate-test-reporter < coverage/lcov.info
