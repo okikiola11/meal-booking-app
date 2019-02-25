@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -10,23 +11,21 @@
     <title>Book-A-Meal:: Admin Dashboard</title>
     <link rel="stylesheet" href="asset/css/style.css" />
     <link rel="stylesheet" href="asset/css/admin.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Cinzel|Rajdhani"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <header class="header-ad">
-      <nav>
-        <div id="branding">
-          <h1><a href="../index.html"> Book-a-Meal </a></h1>
-        </div>
+    <link href="https://fonts.googleapis.com/css?family=Cinzel|Rajdhani" rel="stylesheet" />
+</head>
 
-        <ul>
-          <li><a href="menu-list.html">Menu</a></li>
-          <li><a href="meals.html">Meals</a></li>
-        </ul>
-      </nav>
+<body>
+    <header class="header-ad">
+        <nav>
+            <div id="branding">
+                <h1><a href="../index.html"> Book-a-Meal </a></h1>
+            </div>
+
+            <ul>
+                <li><a href="menu-list.html">Menu</a></li>
+                <li><a href="meals.html">Meals</a></li>
+            </ul>
+        </nav>
     </header>
 
     <section class="dashboard-container">
@@ -38,7 +37,9 @@
                 <div class="logo">
 
                     <a href="#" class="sidebar-icon"><span></span> </a>
-                    <a href=""> <span id="logo"><h1>Admin</h1></span></a>
+                    <a href=""> <span id="logo">
+                            <h1>Admin</h1>
+                        </span></a>
 
                 </div>
 
@@ -59,7 +60,8 @@
                                 <span> Set Menu <i class="fal fa-arrow-alt-circle-down"></i></span>
                             </a>
 
-                            <ul id="menu-dashbrd-sub"><!-- get this class and hid -->
+                            <ul id="menu-dashbrd-sub">
+                                <!-- get this class and hid -->
 
                                 <li id="menu-dashbrd-edit">
                                     <a href="set-menu-form.html">Add Menu</a>
@@ -76,7 +78,8 @@
                                 </span>
                             </a>
 
-                            <ul id="menu-dashbrd-sub"><!-- get this class and hid -->
+                            <ul id="menu-dashbrd-sub">
+                                <!-- get this class and hid -->
 
                                 <li id="menu-dashbrd-edit">
                                     <a href="add-meal.html">Add Meal</a>
@@ -103,12 +106,21 @@
                         </li>
 
                         <li>
+                            <a href="notifications.html">
+                                <span> Notifications </span>
+                                <span id="menu-db-fl"> > </span>
+                            </a>
+
+                        </li>
+
+                        <li>
                             <a href="#">
                                 <span> Orders </span>
                                 <span id="menu-db-fl"> > </span>
                             </a>
 
-                            <ul id="menu-dashbrd-sub"><!-- get this class and hid -->
+                            <ul id="menu-dashbrd-sub">
+                                <!-- get this class and hid -->
 
                                 <li id="menu-dashbrd-edit">
                                     <a href="order-details.html"> Details of Order </a>
@@ -130,6 +142,13 @@
 
                         </li>
 
+                        <li>
+                            <a href="../index.html">
+                                <span>Logout</span>
+                            </a>
+
+                        </li>
+
                     </ul>
 
                 </div>
@@ -138,136 +157,147 @@
 
         </div>
 
-    </div>
+        </div>
 
-    <div class="left-content">
+        <div class="left-content">
 
-        <div class="inner-content">
+            <div class="inner-content">
 
-            <div class="outter-dash-add">
+                <div class="outter-dash-add">
 
-                <div class="center-btn">
-                    <a class="add-meal-btn" href="set-menu-form.html" type="submit">
-                        Set Menu
-                    </a>
-                </div>
-
-                <div class="set-hdr">
-                    <div class="set-title">Meal Items on Today's Menu</div>
-                    <div class="ch-date">
-                        <span>Change Date</span>
-                        <span class="ch-date-sp">09-02-2019</span>
+                    <div class="center-btn">
+                        <a class="add-meal-btn" href="set-menu-form.html" type="submit">
+                            Set Menu
+                        </a>
                     </div>
-                </div>
 
-                <div>
+                    <div class="set-hdr">
+                        <div class="set-title">Meal Items on Today's Menu</div>
+                        <div class="ch-date">
+                            <span>Change Date</span>
+                            <span class="ch-date-sp">09-02-2019</span>
 
-                    <div class="section--type-ad">
-                        <span>
-                            <img src="asset/images/fried-chicken.jpg" alt="">
-                        </span><br>
-                        <p>
-                            <span class="section-title-ad">CHICKEN</span><br />
-                            <span class="section-title-s">
-                            Our Own Exciting Variant Of The Popular Okro Soup, Comprising
-                            Diced Okro, Fish, Shrimps And Prawns In A Rich Broth.
+                            <span class="set-nn">
+                                <a href="set-notification.html">
+                                    <span class="btn-note">Set Notification</span>
+                                </a>
                             </span>
-                        </p>
+                        </div>
+                    </div>
 
-                        <div class="b-amt">1500
+                    <div>
+
+                        <div class="section--type-ad">
+                            <span>
+                                <img src="asset/images/fried-chicken.jpg" alt="">
+                            </span><br>
+                            <p>
+                                <span class="section-title-ad">CHICKEN</span><br />
+                                <span class="section-title-s">
+                                    Our Own Exciting Variant Of The Popular Okro Soup, Comprising
+                                    Diced Okro, Fish, Shrimps And Prawns In A Rich Broth.
+                                </span>
+                            </p>
+
+                            <div class="b-amt">1500
+                            </div>
+
+                            <div class="clearfix"></div>
+
                         </div>
 
-                        <div class="clearfix"></div>
-
                     </div>
 
-                </div>
+                    <div class="section--space">
 
-                <div class="section--space">
+                        <div class="section--type-ad">
+                            <span>
+                                <img src="asset/images/meal1.jpg" alt="">
+                            </span><br>
+                            <p>
+                                <span class="section-title-ad"> Burger </span><br />
+                                <span class="section-title-s">
+                                    Our Own Exciting Variant Of The Popular Okro Soup, Comprising
+                                    Diced Okro, Fish, Shrimps And Prawns In A Rich Broth.
+                                </span>
+                            </p>
 
-                    <div class="section--type-ad">
-                        <span>
-                            <img src="asset/images/meal1.jpg" alt="">
-                        </span><br>
-                        <p>
-                            <span class="section-title-ad"> Burger </span><br />
-                            <span class="section-title-s">
-                            Our Own Exciting Variant Of The Popular Okro Soup, Comprising
-                            Diced Okro, Fish, Shrimps And Prawns In A Rich Broth.
-                            </span>
-                        </p>
+                            <div class="b-amt">1200
+                            </div>
 
-                        <div class="b-amt">1200
-                         </div>
-
-                        <div class="clearfix"></div>
-                    </div>
-
-                </div>
-
-                <div class="section--space">
-
-                    <div class="section--type-ad">
-                        <span>
-                            <img src="asset/images/rice-with-beef.jpg" alt="">
-                        </span><br>
-                        <p>
-                            <span class="section-title-ad">SEAFOOD OKRO</span><br />
-                            <span class="section-title-s">
-                            Our Own Exciting Variant Of The Popular Okro Soup, Comprising
-                            Diced Okro, Fish, Shrimps And Prawns In A Rich Broth.
-                            </span>
-                        </p>
-
-                        <div class="b-amt">1000
+                            <div class="clearfix"></div>
                         </div>
 
-                        <div class="clearfix"></div>
                     </div>
 
-                </div>
+                    <div class="section--space">
 
-                <div class="section--space">
+                        <div class="section--type-ad">
+                            <span>
+                                <img src="asset/images/rice-with-beef.jpg" alt="">
+                            </span><br>
+                            <p>
+                                <span class="section-title-ad">SEAFOOD OKRO</span><br />
+                                <span class="section-title-s">
+                                    Our Own Exciting Variant Of The Popular Okro Soup, Comprising
+                                    Diced Okro, Fish, Shrimps And Prawns In A Rich Broth.
+                                </span>
+                            </p>
 
-                    <div class="section--type-ad">
-                        <span>
-                            <img src="asset/images/rice-chicken.jpg" alt="">
-                        </span><br>
-                        <p>
-                            <span class="section-title-ad">SEAFOOD OKRO</span><br />
-                            <span class="section-title-s">
-                            Our Own Exciting Variant Of The Popular Okro Soup, Comprising
-                            Diced Okro, Fish, Shrimps And Prawns In A Rich Broth.
-                            </span>
-                        </p>
+                            <div class="b-amt">1000
+                            </div>
 
-                        <div class="b-amt">2000
+                            <div class="clearfix"></div>
                         </div>
 
-                        <div class="clearfix"></div>
                     </div>
 
-                </div>
+                    <div class="section--space">
 
-                <div class="section--space">
+                        <div class="section--type-ad">
+                            <span>
+                                <img src="asset/images/rice-chicken.jpg" alt="">
+                            </span><br>
+                            <p>
+                                <span class="section-title-ad">SEAFOOD OKRO</span><br />
+                                <span class="section-title-s">
+                                    Our Own Exciting Variant Of The Popular Okro Soup, Comprising
+                                    Diced Okro, Fish, Shrimps And Prawns In A Rich Broth.
+                                </span>
+                            </p>
 
-                    <div class="section--type-ad">
-                        <span>
-                            <img src="asset/images/meal4.jpg" alt="">
-                        </span><br>
-                        <p>
-                            <span class="section-title-ad"> Chicken Pie with Burger</span><br />
-                            <span class="section-title-s">
-                            Our Own Exciting Variant Of The Popular Okro Soup, Comprising
-                            Diced Okro, Fish, Shrimps And Prawns In A Rich Broth.
-                            </span>
-                        </p>
+                            <div class="b-amt">2500
+                            </div>
 
-                        <div class="b-amt">
-                            2500
+                            <div>
+
+                            </div>
+
+                            <div class="clearfix"></div>
                         </div>
 
-                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="section--space">
+
+                        <div class="section--type-ad">
+                            <span>
+                                <img src="asset/images/meal4.jpg" alt="">
+                            </span><br>
+                            <p>
+                                <span class="section-title-ad"> Chicken Pie with Burger</span><br />
+                                <span class="section-title-s">
+                                    Our Own Exciting Variant Of The Popular Okro Soup, Comprising
+                                    Diced Okro, Fish, Shrimps And Prawns In A Rich Broth.
+                                </span>
+                            </p>
+
+                            <div class="b-amt">2000
+                            </div>
+
+                            <div class="clearfix"></div>
+                        </div>
+
                     </div>
 
                 </div>
@@ -276,12 +306,11 @@
 
         </div>
 
-    </div>
+        <footer>
+            <div class="footer-ad">
+                2019 Meal Booking Application. All Rights Reserved
+            </div>
+        </footer>
+</body>
 
-    <footer>
-      <div class="footer-ad">
-        2019 Meal Booking Application. All Rights Reserved
-      </div>
-    </footer>
-  </body>
 </html>

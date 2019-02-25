@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -10,23 +11,21 @@
     <title>Book-A-Meal:: Admin Dashboard</title>
     <link rel="stylesheet" href="asset/css/style.css" />
     <link rel="stylesheet" href="asset/css/admin.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Cinzel|Rajdhani"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <header class="header-ad">
-      <nav>
-        <div id="branding">
-          <h1><a href="../index.html">Book-a-Meal </a></h1>
-        </div>
+    <link href="https://fonts.googleapis.com/css?family=Cinzel|Rajdhani" rel="stylesheet" />
+</head>
 
-        <ul>
-          <li><a href="menu-list.html">Menu</a></li>
-          <li><a href="meals.html">Meals</a></li>
-        </ul>
-      </nav>
+<body>
+    <header class="header-ad">
+        <nav>
+            <div id="branding">
+                <h1><a href="../index.html">Book-a-Meal </a></h1>
+            </div>
+
+            <ul>
+                <li><a href="menu-list.html">Menu</a></li>
+                <li><a href="meals.html">Meals</a></li>
+            </ul>
+        </nav>
     </header>
 
     <section class="dashboard-container">
@@ -38,7 +37,9 @@
                 <div class="logo">
 
                     <a href="#" class="sidebar-icon"><span></span> </a>
-                    <a href=""> <span id="logo"><h1>Admin</h1></span></a>
+                    <a href=""> <span id="logo">
+                            <h1>Admin</h1>
+                        </span></a>
 
                 </div>
 
@@ -59,7 +60,8 @@
                                 <span> Set Menu </span>
                             </a>
 
-                            <ul id="menu-dashbrd-sub"><!-- get this class and hid -->
+                            <ul id="menu-dashbrd-sub">
+                                <!-- get this class and hid -->
 
                                 <li id="menu-dashbrd-edit">
                                     <a href="set-menu-form.html">Add Menu</a>
@@ -79,7 +81,8 @@
                                 <span id="menu-db-fl"> <i class="fal fa-arrow-alt-circle-down"></i> </span>
                             </a>
 
-                            <ul id="menu-dashbrd-sub"><!-- get this class and hid -->
+                            <ul id="menu-dashbrd-sub">
+                                <!-- get this class and hid -->
 
                                 <li id="menu-dashbrd-edit">
                                     <a href="add-meal.html">Add Meal</a>
@@ -106,10 +109,31 @@
                         </li>
 
                         <li>
-                            <a href="order-details.html">
-                                <span>Details of Orders</span>
+                            <a href="notifications.html">
+                                <span> Notifications </span>
                                 <span id="menu-db-fl"> > </span>
                             </a>
+
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <span> Orders </span>
+                                <span id="menu-db-fl"> > </span>
+                            </a>
+
+                            <ul id="menu-dashbrd-sub">
+                                <!-- get this class and hid -->
+
+                                <li id="menu-dashbrd-edit">
+                                    <a href="order-details.html"> Details of Order </a>
+                                </li>
+
+                                <li id="menu-dashbrd-edit">
+                                    <a href="order-history.html">Order History</a>
+                                </li>
+
+                            </ul>
 
                         </li>
 
@@ -121,6 +145,12 @@
 
                         </li>
 
+                        <li>
+                            <a href="../index.html">
+                                <span>Logout</span>
+                            </a>
+
+                        </li>
                     </ul>
 
                 </div>
@@ -190,9 +220,9 @@
                                             <td>20-10-2013</td>
                                             <td>shade@gmail.com</td>
                                             <td><span class="deliv">Delivered</span></td>
-                                         </tr>
+                                        </tr>
 
-                                         <tr>
+                                        <tr>
                                             <td>1112</td>
                                             <td>SPECIALS</td>
                                             <td>Amala</td>
@@ -241,12 +271,13 @@
 
         </div>
 
-    </div>
+        </div>
 
-    <footer>
-      <div class="footer-ad">
-        2019 Meal Booking Application. All Rights Reserved
-      </div>
-    </footer>
-  </body>
+        <footer>
+            <div class="footer-ad">
+                2019 Meal Booking Application. All Rights Reserved
+            </div>
+        </footer>
+</body>
+
 </html>

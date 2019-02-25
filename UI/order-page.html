@@ -1,140 +1,470 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="description" content="Meal Booking application" />
-    <meta name="keywords" content="Meal Booking application" />
-    <meta name="author" content="Apelehin Okikiola" />
-    <title>Book-A-Meal</title>
-    <link rel="stylesheet" href="asset/css/style.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Cinzel|Rajdhani"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <header>
-      <nav>
-        <div id="branding">
-          <h1><a href="../index.html"> Book-a-Meal </a></h1>
-        </div>
 
-        <ul>
-          <li><a href="menu-list.html">Menu </a></li>
-          <li><a href="meals.html">Meal</a></li>
-        </ul>
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="description" content="Meal Booking application" />
+  <meta name="keywords" content="Meal Booking application" />
+  <meta name="author" content="Apelehin Okikiola" />
+  <title>Book-A-Meal</title>
+  <link rel="stylesheet" href="asset/css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Cinzel|Rajdhani" rel="stylesheet" />
+</head>
 
-    <div class="order-banner">
-      <div>Order a meal</div>
-    </div>
+<body>
 
-    <div class="section-content-ord">
-      <div class="section-content--frt-order">
-        <div class="menu-txt">Make An Order</div>
+  <header>
+    <nav>
+      <div id="branding">
+        <h1><a href="../index.html"> Book-a-Meal </a></h1>
+      </div>
 
-        <div class="section--order">
-          <span class="section-order-img">
-            <img src="asset/images/meal2.jpg" width="100%" alt="" />
+      <ul>
+        <li><a href="menu-list.html">Menu </a></li>
+        <li><a href="meals.html">Meal</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="order-banner">
+    <div>Order a meal</div>
+  </div>
+
+  <div class="section-content-ord">
+
+    <div class="section-content--frt-order">
+
+      <div class="menu-txt">Make An Order</div>
+
+      <div class="section--order">
+
+        <span class="section-order-img">
+          <img src="asset/images/meal2.jpg" width="100%" alt="" />
+        </span>
+
+        <p>
+          <span class="section-title-ord">Pasta sausage</span><br />
+
+          <span class="section-c-txt">
+            Our Own Exciting Variant Of The Popular Okro Soup, Comprising
+            Diced Okro, Fish, Shrimps And Prawns In A Rich Broth.
           </span>
-          <p>
-            <span class="section-title-ord">Rice with Beef</span><br />
-            <span class="section-c-txt">
-              Our Own Exciting Variant Of The Popular Okro Soup, Comprising
-              Diced Okro, Fish, Shrimps And Prawns In A Rich Broth.
-            </span><br>
-            <span>small</span><span>large</span><span>medium</span>
-          </p>
+        </p>
 
-          <div class="b-oder-amt">1500
-            <span class="order-edit btn-delete">Add</span>
+        <div class="b-oder-amt">1500</div>
+
+        <div class="b-oder-add">
+          <a class="btn" href="#modal-popup">Add</a>
+        </div>
+
+        <div id="modal-popup" class="overlay">
+
+          <div class="inner-popup">
+            <h2>Choose Meal </h2>
+            <a class="close" href="#">&times;</a>
+            <div class="content">
+              <div>
+                <form action="#">
+                  <div class="b-meal-type">
+                    <p class="bb-label">Select your chicken</p>
+
+                    <p class="text-hdr--cont">
+                      <label>
+                        <input name="group1" type="radio" checked />
+                        <span>Crispy chicken</span>
+                      </label>
+                    </p>
+
+                    <p>
+                      <label>
+                        <input name="group1" type="radio" disabled="disabled" />
+                        <span>Chicken beef</span>
+                      </label>
+                    </p>
+                  </div>
+
+                  <div>
+                    <p>Choose your preferred drink</p>
+
+                    <p>
+                      <label>
+                        <input name="group2" type="radio" checked />
+                        <span>Water</span>
+                      </label>
+                    </p>
+                    <p>
+                      <label>
+                        <input class="with-gap" name="group2" type="radio" />
+                        <span>Fanta / Coke</span>
+                      </label>
+                    </p>
+                    <p>
+                      <label>
+                        <input name="group1" type="radio" disabled="disabled" />
+                        <span>Rice with meat</span>
+                      </label>
+                    </p>
+                  </div>
+
+                  <div>
+                    <p>Choose your preferred meal size</p>
+
+                    <p>
+                      <label>
+                        <input name="group3" type="radio" />
+                        <span>Small</span>
+                      </label>
+                    </p>
+
+                    <p>
+                      <label>
+                        <input name="group3" type="radio" />
+                        <span>Medium </span>
+                      </label>
+                    </p>
+
+                    <p>
+                      <label>
+                        <input class="with-gap" name="group3" type="radio" checked />
+                        <span>Large</span>
+                      </label>
+                    </p>
+                  </div>
+
+                </form>
+
+              </div>
+
+            </div>
+
+            <div class="btn-action-ord">
+
+              <div class="btn-total-ord">
+                <button class="btn-action-addto">Add to Order 10000</button>
+              </div>
+
+              <div class="btn-ord-sum">
+                <span class="bdr-round">-</span>
+                <span>2500</span>
+                <span class="bdr-round">+</span>
+              </div>
+
+              <div class="clearfix"></div>
+            </div>
+
+            <div class="clearfix"></div>
           </div>
 
-          <div class="clearfix"></div>
-        </div>
-
-        <div class="section--order">
-            <span class="section-order-img">
-              <img src="asset/images/fried-chicken.jpg" width="100%" alt="" />
-            </span>
-          <p>
-            <span class="section-title-ord">Rice with Beef</span><br />
-            <span class="section-c-txt">
-              Our Own Exciting Variant Of The Popular Okro Soup, Comprising
-              Diced Okro, Fish, Shrimps And Prawns In A Rich Broth.
-            </span><br>
-            <span>small</span><span>large</span><span>medium</span>
-          </p>
-
-          <div class="b-oder-amt">1500<span class="order-edit">Add</span></div>
-
-          <div class="clearfix"></div>
-        </div>
-
-        <div class="section--order">
-
-          <p>
-            <span class="section-title-ord">Rice with Beef</span><br />
-            <span class="section-c-txt">
-              Our Own Exciting Variant Of The Popular Okro Soup, Comprising
-              Diced Okro, Fish, Shrimps And Prawns In A Rich Broth.
-            </span><br>
-            <span>small</span><span>large</span><span>medium</span>
-          </p>
-
-          <div class="b-oder-amt">1500<span class="order-edit">Add</span></div>
-
-          <div class="clearfix"></div>
         </div>
 
       </div>
 
-      <div class="section-c--ord">
-        <div class="b-bdr">
-          <div class="right">
-            <div class="b-bdr-title">Order</div>
-            <div class="b-bdr-txt">Fried Rice with chicken</div>
-          </div>
+      <div class="section--order">
 
-          <div class="left">
-            <div class="b-bdr-title">Amount</div>
-            <div class="b-bdr-txt">2000</div>
-          </div>
+        <span class="section-order-img">
+          <img src="asset/images/Fried-chicken.jpg" width="100%" alt="" />
+        </span>
+
+        <p>
+          <span class="section-title-ord">Fried rice with chicken</span><br />
+
+          <span class="section-c-txt">
+            Our Own Exciting Variant Of The Popular Okro Soup, Comprising
+            Diced Okro, Fish, Shrimps And Prawns In A Rich Broth.
+          </span>
+        </p>
+
+        <div class="b-oder-amt">1800</div>
+
+        <div class="b-oder-add">
+          <a class="btn" href="#modal-popup">Add</a>
         </div>
 
-        <div class="b-bdr">
-          <div class="right">
-            <div class="b-bdr-title">Subtotal</div>
+        <div id="modal-popup" class="overlay">
+
+          <div class="inner-popup">
+            <h2>Choose Meal </h2>
+            <a class="close" href="#">&times;</a>
+            <div class="content">
+              <div>
+                <form action="#">
+                  <div class="b-meal-type">
+                    <p class="bb-label">Select your chicken</p>
+
+                    <p class="text-hdr--cont">
+                      <label>
+                        <input name="group1" type="radio" checked />
+                        <span>Crispy chicken</span>
+                      </label>
+                    </p>
+
+                    <p>
+                      <label>
+                        <input name="group1" type="radio" disabled="disabled" />
+                        <span>Chicken beef</span>
+                      </label>
+                    </p>
+                  </div>
+
+                  <div>
+                    <p>Choose your preferred drink</p>
+
+                    <p>
+                      <label>
+                        <input name="group2" type="radio" checked />
+                        <span>Water</span>
+                      </label>
+                    </p>
+                    <p>
+                      <label>
+                        <input class="with-gap" name="group2" type="radio" />
+                        <span>Fanta / Coke</span>
+                      </label>
+                    </p>
+                    <p>
+                      <label>
+                        <input name="group1" type="radio" disabled="disabled" />
+                        <span>Rice with meat</span>
+                      </label>
+                    </p>
+                  </div>
+
+                  <div>
+                    <p>Choose your preferred meal size</p>
+
+                    <p>
+                      <label>
+                        <input name="group3" type="radio" />
+                        <span>Small</span>
+                      </label>
+                    </p>
+
+                    <p>
+                      <label>
+                        <input name="group3" type="radio" />
+                        <span>Medium </span>
+                      </label>
+                    </p>
+
+                    <p>
+                      <label>
+                        <input class="with-gap" name="group3" type="radio" checked />
+                        <span>Large</span>
+                      </label>
+                    </p>
+                  </div>
+
+                </form>
+
+              </div>
+
+            </div>
+
+            <div class="btn-action-ord">
+
+              <div class="btn-total-ord">
+                <a href="#" class="btn-action-addto">Add to Order 10000</a>
+              </div>
+
+              <div class="btn-ord-sum">
+                <span class="bdr-round">-</span>
+                <span>2500</span>
+                <span class="bdr-round">+</span>
+              </div>
+
+              <div class="clearfix"></div>
+            </div>
+
+            <div class="clearfix"></div>
           </div>
 
-          <div class="left">
-            <div class="b-bdr-title">2000</div>
-          </div>
         </div>
 
-        <div class="b-bdr">
-          <div class="right">
-            <div class="b-bdr-title">Delivery Fee</div>
-          </div>
+      </div>
 
-          <div class="left">
-            <div class="b-bdr-title">1000</div>
-          </div>
+
+      <div class="section--order">
+
+        <span class="section-order-img">
+          <img src="asset/images/meal5.jpg" width="100%" alt="Meal" />
+        </span>
+
+        <p>
+          <span class="section-title-ord">Fried rice with beef</span><br />
+
+          <span class="section-c-txt">
+            Our Own Exciting Variant Of The Popular Okro Soup, Comprising
+            Diced Okro, Fish, Shrimps And Prawns In A Rich Broth.
+          </span>
+        </p>
+
+        <div class="b-oder-amt">2500</div>
+
+        <div class="b-oder-add">
+          <a class="btn" href="#modal-popup">Add</a>
         </div>
 
-        <div class="checkout-btn">
-          <a href="order-confirmation.html">Proceed to Checkout</a>
+        <div id="modal-popup" class="overlay">
+
+          <div class="inner-popup">
+            <h2>Choose Meal </h2>
+            <a class="close" href="#">&times;</a>
+            <div class="content">
+              <div>
+                <form action="#">
+                  <div class="b-meal-type">
+                    <p class="bb-label">Select your chicken</p>
+
+                    <p class="text-hdr--cont">
+                      <label>
+                        <input name="group1" type="radio" checked />
+                        <span>Crispy chicken</span>
+                      </label>
+                    </p>
+
+                    <p>
+                      <label>
+                        <input name="group1" type="radio" disabled="disabled" />
+                        <span>Chicken beef</span>
+                      </label>
+                    </p>
+                  </div>
+
+                  <div>
+                    <p>Choose your preferred drink</p>
+
+                    <p>
+                      <label>
+                        <input name="group2" type="radio" checked />
+                        <span>Water</span>
+                      </label>
+                    </p>
+                    <p>
+                      <label>
+                        <input class="with-gap" name="group2" type="radio" />
+                        <span>Fanta / Coke</span>
+                      </label>
+                    </p>
+                    <p>
+                      <label>
+                        <input name="group1" type="radio" disabled="disabled" />
+                        <span>Rice with meat</span>
+                      </label>
+                    </p>
+                  </div>
+
+                  <div>
+                    <p>Choose your preferred meal size</p>
+
+                    <p>
+                      <label>
+                        <input name="group3" type="radio" />
+                        <span>Small</span>
+                      </label>
+                    </p>
+
+                    <p>
+                      <label>
+                        <input name="group3" type="radio" />
+                        <span>Medium </span>
+                      </label>
+                    </p>
+
+                    <p>
+                      <label>
+                        <input class="with-gap" name="group3" type="radio" checked />
+                        <span>Large</span>
+                      </label>
+                    </p>
+                  </div>
+
+                </form>
+
+              </div>
+
+            </div>
+
+            <div class="btn-action-ord">
+
+              <div class="btn-total-ord">
+                <a href="#" class="btn-action-addto">Add to Order 10000</a>
+              </div>
+
+              <div class="btn-ord-sum">
+                <span class="bdr-round">-</span>
+                <span>2500</span>
+                <span class="bdr-round">+</span>
+              </div>
+
+              <div class="clearfix"></div>
+            </div>
+
+            <div class="clearfix"></div>
+          </div>
+
         </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="section-c--ord">
+
+      <div class="b-bdr">
+        <div class="right">
+          <div class="b-bdr-title">Order</div>
+          <div class="b-bdr-txt">Fried Rice with chicken</div>
+          <div class="b-bdr-txt">Mirinda</div>
+        </div>
+
+        <div class="left">
+          <div class="b-bdr-title">Amount</div>
+          <div class="b-bdr-txt">2000</div>
+          <div class="b-bdr-txt">800</div>
+        </div>
+      </div>
+
+      <div class="b-bdr">
+        <div class="right">
+          <div class="b-bdr-title">Subtotal</div>
+        </div>
+
+        <div class="left">
+          <div class="b-bdr-title">2800</div>
+        </div>
+      </div>
+
+      <div class="b-bdr">
+        <div class="right">
+          <div class="b-bdr-title">Delivery Fee</div>
+          <div class="b-bdr-title">Total</div>
+        </div>
+
+        <div class="left">
+          <div class="b-bdr-title">1000</div>
+          <div class="b-bdr-title">3800</div>
+        </div>
+
+      </div>
+
+      <div class="checkout-btn">
+        <a href="order-confirmation.html">Proceed to Checkout</a>
       </div>
     </div>
 
-    <footer>
-      <div class="footer">
-        2019 Meal Booking Application. All Rights Reserved
-      </div>
-    </footer>
-  </body>
+  </div>
+
+  <footer>
+    <div class="footer">
+      2019 Meal Booking Application. All Rights Reserved
+    </div>
+  </footer>
+
+</body>
+
+<script src="asset/js/main.js"></script>
+
 </html>
