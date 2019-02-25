@@ -12,11 +12,7 @@ var _menuData = _interopRequireDefault(require("../utils/menuData"));
 
 var _orderData = _interopRequireDefault(require("../utils/orderData"));
 
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var expect = _chai.default.expect;
 describe('Test case for the default for the meal booking route /', function () {
