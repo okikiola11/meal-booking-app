@@ -24,9 +24,6 @@ test:
 script:
   - npm run test-dev
 
-after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
-
 after_success:
   - npm run test-dev
   - npm install codeclimate-test-reporter
