@@ -1,4 +1,4 @@
 /API/node_modules/
 /node_modules/
-.coveralls.yml
-.nyc_output
+/.coveralls.yml
+/.nyc_output
