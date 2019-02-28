@@ -7,5 +7,4 @@ export default class mealModel {
     this.summary = null;
     this.imageUrl = null;
   }
-
 }

@@ -62,10 +62,9 @@ const orderController = {
     });
 
     if (orderFound === undefined || orderFound === null) {
-
       return res.status(404).send({
         status: 404,
-        error: 'Order Id not found'
+        error: 'Order Id not found',
       });
     }
 
