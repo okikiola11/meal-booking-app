@@ -1,12 +1,6 @@
-import mealData from '../utils/mealData';
+import models from '../models/index';
 
 const MealController = {
-  fetchAllMeals(req, res) {
-    return res.status(200).json({
-      status: 200,
-      data: mealData,
-    });
-  },
   addAMeal(req, res) {
     const {
       name,
@@ -16,107 +10,167 @@ const MealController = {
       imageUrl,
     } = req.body;
 
-    const newlyCreatedMeal = {
-      id: mealData[mealData.length - 1].id + 1,
-      name,
-      size,
-      price,
-      summary,
-      imageUrl,
-    };
-
-    const oldLength = mealData.length;
-
-    mealData.push(newlyCreatedMeal);
-    const newLength = mealData.length;
-
-    if (newLength > oldLength) {
-      return res.status(201).json({
-        status: 201,
-        message: 'New meal has been added',
-        data: [newlyCreatedMeal],
+    return models.Meal.create({
+        name,
+        size,
+        price,
+        summary,
+        imageUrl,
+      })
+      .then((meals) => {
+        res.status(201)
+          .json({
+            status: 201,
+            message: 'New meal has been added',
+            data: meals,
+          });
+      })
+      .catch(() => {
+        res.status(500)
+          .json({
+            status: 500,
+            message: 'something went wrong while trying to save your data',
+          });
       });
-    }
+  },
 
-    return res.status(500).json({
-      status: 500,
-      message: 'something went wrong while trying to save your data',
-    });
+  fetchAllMeals(req, res) {
+    return models.Meal
+      .findAll()
+      .then((meals) => {
+        res.status(200)
+          .json({
+            status: 200,
+            data: meals,
+          });
+      })
+      .catch(() => {
+        res.status(404)
+          .json({
+            status: 404,
+            message: 'Cannot fetch all meal',
+          });
+      });
   },
 
   getSingleMeal(req, res) {
     const id = parseInt(req.params.id, 10);
 
-    const meal = mealData.find(singleMeal => singleMeal.id === id);
-    if (meal) {
-      return res.status(200).send({
-        status: 200,
-        message: 'Meal has been retrieved successfully',
-        data: [meal],
+    return models.Meal
+      .findById(id)
+      .then((meals) => {
+        console.log(res.status);
+        res.status(200)
+          .json({
+            status: 200,
+            message: 'Meal has been retrieved successfully',
+            data: meals,
+          });
+      })
+      .catch(() => {
+        res.status(404)
+          .json({
+            status: 404,
+            message: 'Meal Id does not exist',
+          });
       });
-    }
-    return res.status(404).send({
-      status: 404,
-      message: 'Meal Id does not exist',
-    });
+  },
+
+
+  updateAMeal(req, res) {
+    return models.Meal
+      .find({
+        where: {
+          mealId: parseInt(req.params.id, 10),
+        },
+      })
+      .then((meals) => {
+        if (!meals) {
+          return res.status(404).send({
+            status: 404,
+            error: 'record id not found',
+          });
+        }
+        return meals
+          .update({
+            name: req.body.name || meals.name,
+            size: req.body.size || meals.size,
+            price: req.body.price || meals.price,
+            summary: req.body.summary || meals.summary,
+            imageUrl: req.body.imageUrl || meals.imageUrl,
+
+          })
+          .then((meals) => {
+            res.status(200)
+              .json({
+                status: 200,
+                message: 'Meal has been successfully updated',
+                data: meals,
+              });
+          })
+          .catch(() => {
+            res.status(404)
+              .json({
+                status: 404,
+                error: 'record id not found',
+              });
+          });
+      });
   },
 
   deleteMeal(req, res) {
-    const id = parseInt(req.params.id, 10);
+    return models.Meal
+      .find({
+        where: {
+          mealId: parseInt(req.params.id, 10),
+        },
+      })
+      .then((meals) => {
+        if (!meals) {
+          return res.status(404).send({
+            status: 404,
+            error: 'record id not found',
+          });
+        }
 
-    const removedIndex = mealData.findIndex(data => data.id === +id);
-
-    if (removedIndex === -1) {
-      return res.status(404).json({
-        status: 404,
-        error: 'Oooops! no record with such Id',
+        return meals
+          .destroy()
+          .then((meals) => {
+            res.status(200)
+              .json({
+                status: 200,
+                message: 'Meal record deleted successfully',
+                data: [],
+              });
+          })
+          .catch(() => {
+            res.status(404)
+              .json({
+                status: 404,
+                error: 'Oooops! no record with such Id',
+              });
+          });
       });
-    }
-
-    mealData.splice(removedIndex, 1);
-    return res.status(200).json({
-      status: 200,
-      message: 'Meal record deleted successfully',
-      data: [],
-    });
   },
 
-  updateAMeal(req, res) {
-    const id = parseInt(req.params.id, 10);
 
-    let mealFound;
-    let mealIndex;
-    mealData.map((mealData, index) => {
-      if (mealData.id === id) {
-        mealFound = mealData;
-        mealIndex = index;
-      }
-    });
+  //FORMAT OF TOKEN
+  //Authorization: Bearer <access_token>
+  verifyToken(req, res, next) {
+    //Get auth Header value
 
-    if (mealFound === undefined || mealFound === null) {
-      return res.status(404).send({
-        status: 404,
-        error: 'record id not found',
-      });
+    const bearerHeader = req.headers['authorization'];
+
+    //Check if bearer is undefined
+    if (typeof bearerHeader != 'undefined') {
+      res.send("here");
+    } else {
+      //Forbidden
+      res.sendStatus(403);
     }
 
-    const updatedMeal = {
-      id: mealFound.id,
-      name: req.body.name || mealFound.name,
-      price: req.body.price || mealFound.price,
-      size: req.body.size || mealFound.size,
-      summary: req.body.summary || mealFound.summary,
-      imageUrl: req.body.imageUrl || mealFound.imageUrl,
-    };
-
-    mealData.splice(mealIndex, 1, updatedMeal);
-
-    return res.status(200).send({
-      status: 200,
-      message: 'Meal has been successfully updated',
-      data: [updatedMeal],
-    });
   },
+
 };
 
 export default MealController;
