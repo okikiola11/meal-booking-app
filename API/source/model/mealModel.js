@@ -1,14 +1,11 @@
 export default (sequelize, Datatypes) => {
-  const Menu = sequelize.define('menus', {
-    menuId: {
+  const Meal = sequelize.define('meals', {
+    mealId: {
       type: Datatypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
     },
-    menuType: {
-      type: Datatypes.STRING
-    },
-    meal: {
+    name: {
       type: Datatypes.STRING
     },
     size: {
@@ -20,21 +17,19 @@ export default (sequelize, Datatypes) => {
     summary: Datatypes.TEXT,
     imageUrl: {
       type: Datatypes.TEXT
-    },
-    mealId: Datatypes.INTEGER
+    }
   });
 
-  Menu.associate = models => {
-    Menu.belongsToMany(models.Meal, {
-      through: 'menu',
-      foreignkey: 'mealId'
-    });
-
-    Menu.belongsToMany(models.Order, {
-      through: 'order',
+  Meal.associate = models => {
+    Meal.belongsToMany(models.Order, {
+      through: 'meal',
       foreignkey: 'orderId'
+    });
+    Meal.belongsToMany(models.Menu, {
+      through: 'menu',
+      foreignkey: 'menuId'
     });
   };
 
-  return Menu;
+  return Meal;
 };
