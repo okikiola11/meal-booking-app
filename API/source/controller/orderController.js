@@ -1,93 +1,103 @@
-import orderData from '../utils/orderData';
+import models from '../models/index';
 
 const orderController = {
   fetchAllOrder(req, res) {
-    return res.status(200).json({
-      status: 200,
-      data: orderData,
-    });
+    return models.Order.findAll()
+      .then(orders => {
+        res.status(200).json({
+          status: 200,
+          data: orders
+        });
+      })
+      .catch(() => {
+        res.status(404).json({
+          status: 404,
+          message: 'Cannot fetch all order'
+        });
+      });
   },
 
   addAnOrder(req, res) {
-    const {
-      menuType,
-      meal,
+    const { username, email, phoneNumber, name, size, price } = req.body;
+
+    return models.Order.create({
+      username,
+      email,
+      phoneNumber,
+      name,
       size,
-      order,
-      price,
-      customerEmail,
-      imageUrl,
-    } = req.body;
-
-    const newlyCreatedOrder = {
-      id: orderData[orderData.length - 1].id + 1,
-      menuType,
-      meal,
-      size,
-      order,
-      price,
-      customerEmail,
-      imageUrl,
-    };
-
-    const oldOrderLength = orderData.length;
-
-    orderData.push(newlyCreatedOrder);
-    const newOrderLength = orderData.length;
-
-    if (newOrderLength > oldOrderLength) {
-      return res.status(201).json({
-        status: 201,
-        message: 'New order has been added',
-        data: [newlyCreatedOrder],
+      price
+    })
+      .then(orders => {
+        res.status(201).json({
+          status: 201,
+          message: 'New order has been added',
+          data: orders
+        });
+      })
+      .catch(() => {
+        res.status(500).json({
+          status: 500,
+          message: 'something went wrong while trying to save your order'
+        });
       });
-    }
+  },
 
-    return res.status(500).json({
-      status: 500,
-      message: 'something went wrong while trying to save your order',
-    });
+  getSingleOrder(req, res) {
+    const orderId = parseInt(req.params.id, 10);
+
+    return models.Menu.findById(orderId)
+      .then(orders => {
+        res.status(200).json({
+          status: 200,
+          message: 'Order has been retrieved successfully',
+          data: orders
+        });
+      })
+      .catch(() => {
+        res.status(404).json({
+          status: 404,
+          message: 'Order does not exist'
+        });
+      });
   },
 
   modifyAnOrder(req, res) {
-    const id = parseInt(req.params.id, 10);
-
-    let orderFound;
-    let orderIndex;
-    orderData.map((orderData, index) => {
-      if (orderData.id === id) {
-        orderFound = orderData;
-        orderIndex = index;
+    return models.Order.find({
+      where: {
+        orderId: parseInt(req.params.id, 10)
       }
+    }).then(orders => {
+      if (!orders) {
+        return res.status(404).send({
+          status: 404,
+          error: 'Order Id not found'
+        });
+      }
+      return orders
+        .update({
+          username: req.body.username || orders.username,
+          email: req.body.email || orders.email,
+          phoneNumber: req.body.phoneNumber || orders.phoneNumber,
+          name: req.body.name || orders.name,
+          size: req.body.size || orders.size,
+          price: req.body.price || orders.price
+        })
+        .then(orders => {
+          res.status(200).json({
+            status: 200,
+            message: 'Order has been successfully modified',
+            data: orders
+          });
+        })
+        .catch(() => {
+          res.status(404).json({
+            status: 404,
+            error: 'Order Id not found'
+          });
+        });
     });
-
-    if (orderFound === undefined || orderFound === null) {
-
-      return res.status(404).send({
-        status: 404,
-        error: 'Order Id not found'
-      });
-    }
-
-    const updatedOrder = {
-      id: orderFound.id,
-      menuType: req.body.menuType || orderFound.menuType,
-      meal: req.body.meal || orderFound.meal,
-      size: req.body.size || orderFound.size,
-      order: req.body.order || orderFound.order,
-      price: req.body.price || orderFound.price,
-      customerEmail: req.body.customerEmail || orderFound.customerEmail,
-      imageUrl: req.body.imageUrl || orderFound.imageUrl,
-    };
-
-    orderData.splice(orderIndex, 1, updatedOrder);
-
-    return res.status(200).send({
-      status: 200,
-      message: 'Order has been successfully modified',
-      data: [updatedOrder],
-    });
-  },
+  }
 };
 
 export default orderController;
