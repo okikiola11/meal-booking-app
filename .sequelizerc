@@ -1,0 +1,7 @@
+import { path } from 'path';
+
+module.exports = {
+  "config": path.resolve('./source/config', 'config.json'),
+  "models-path": path.resolve('./source/models'),
+  "seeders-path": path.resolve('./source/seeders')
+};

@@ -6,44 +6,47 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _default = function _default(sequelize, Datatypes) {
-  var Menu = sequelize.define('menus', {
-    menuId: {
+  var Meal = sequelize.define('meals', {
+    mealId: {
       type: Datatypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
     },
-    menuType: {
-      type: Datatypes.STRING
-    },
-    meal: {
+    name: {
+      allowNull: false,
+      unique: true,
       type: Datatypes.STRING
     },
     size: {
+      allowNull: false,
       type: Datatypes.STRING
     },
     price: {
+      allowNull: false,
       type: Datatypes.INTEGER
     },
-    summary: Datatypes.TEXT,
-    imageUrl: {
+    summary: {
+      allowNull: false,
       type: Datatypes.TEXT
     },
-    mealId: {
-      type: Datatypes.INTEGER
+    imageUrl: {
+      allowNull: false,
+      type: Datatypes.TEXT
     }
   });
 
-  Menu.associate = function (models) {
-    Menu.hasMany(models.Meal, {
-      foreignkey: 'mealId'
-    });
-    Menu.belongsToMany(models.Order, {
-      through: 'order',
+  Meal.associate = function (models) {
+    Meal.belongsToMany(models.Order, {
+      through: 'meal',
       foreignkey: 'orderId'
+    });
+    Meal.belongsToMany(models.Menu, {
+      through: 'menu',
+      foreignkey: 'menuId'
     });
   };
 
-  return Menu;
+  return Meal;
 };
 
 exports.default = _default;
