@@ -5,91 +5,99 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _orderData = _interopRequireDefault(require("../utils/orderData"));
+var _index = _interopRequireDefault(require("../model/index"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var orderController = {
   fetchAllOrder: function fetchAllOrder(req, res) {
-    return res.status(200).json({
-      status: 200,
-      data: _orderData.default
+    return _index.default.Order.findAll().then(function (orders) {
+      res.status(200).json({
+        status: 200,
+        data: orders
+      });
+    }).catch(function () {
+      res.status(404).json({
+        status: 404,
+        message: 'Cannot fetch all order'
+      });
     });
   },
   addAnOrder: function addAnOrder(req, res) {
     var _req$body = req.body,
-        menuType = _req$body.menuType,
-        meal = _req$body.meal,
+        username = _req$body.username,
+        email = _req$body.email,
+        phoneNumber = _req$body.phoneNumber,
+        name = _req$body.name,
         size = _req$body.size,
-        order = _req$body.order,
-        price = _req$body.price,
-        customerEmail = _req$body.customerEmail,
-        imageUrl = _req$body.imageUrl;
-    var newlyCreatedOrder = {
-      id: _orderData.default[_orderData.default.length - 1].id + 1,
-      menuType: menuType,
-      meal: meal,
+        price = _req$body.price;
+    return _index.default.Order.create({
+      username: username,
+      email: email,
+      phoneNumber: phoneNumber,
+      name: name,
       size: size,
-      order: order,
-      price: price,
-      customerEmail: customerEmail,
-      imageUrl: imageUrl
-    };
-    var oldOrderLength = _orderData.default.length;
-
-    _orderData.default.push(newlyCreatedOrder);
-
-    var newOrderLength = _orderData.default.length;
-
-    if (newOrderLength > oldOrderLength) {
-      return res.status(201).json({
+      price: price
+    }).then(function (orders) {
+      res.status(201).json({
         status: 201,
         message: 'New order has been added',
-        data: [newlyCreatedOrder]
+        data: orders
       });
-    }
-
-    return res.status(500).json({
-      status: 500,
-      message: 'something went wrong while trying to save your order'
+    }).catch(function () {
+      res.status(500).json({
+        status: 500,
+        message: 'something went wrong while trying to save your order'
+      });
+    });
+  },
+  getSingleOrder: function getSingleOrder(req, res) {
+    var orderId = parseInt(req.params.id, 10);
+    return _index.default.Menu.findById(orderId).then(function (orders) {
+      res.status(200).json({
+        status: 200,
+        message: 'Order has been retrieved successfully',
+        data: orders
+      });
+    }).catch(function () {
+      res.status(404).json({
+        status: 404,
+        message: 'Order does not exist'
+      });
     });
   },
   modifyAnOrder: function modifyAnOrder(req, res) {
-    var id = parseInt(req.params.id, 10);
-    var orderFound;
-    var orderIndex;
-
-    _orderData.default.map(function (orderData, index) {
-      if (orderData.id === id) {
-        orderFound = orderData;
-        orderIndex = index;
+    return _index.default.Order.find({
+      where: {
+        orderId: parseInt(req.params.id, 10)
       }
-    });
+    }).then(function (orders) {
+      if (!orders) {
+        return res.status(404).send({
+          status: 404,
+          error: 'Order Id not found'
+        });
+      }
 
-    if (orderFound === undefined || orderFound === null) {
-      return res.status(404).send({
-        status: 404,
-        error: 'Order Id not found'
+      return orders.update({
+        username: req.body.username || orders.username,
+        email: req.body.email || orders.email,
+        phoneNumber: req.body.phoneNumber || orders.phoneNumber,
+        name: req.body.name || orders.name,
+        size: req.body.size || orders.size,
+        price: req.body.price || orders.price
+      }).then(function (orders) {
+        res.status(200).json({
+          status: 200,
+          message: 'Order has been successfully modified',
+          data: orders
+        });
+      }).catch(function () {
+        res.status(404).json({
+          status: 404,
+          error: 'Order Id not found'
+        });
       });
-    }
-
-    var updatedOrder = {
-      id: orderFound.id,
-      menuType: req.body.menuType || orderFound.menuType,
-      meal: req.body.meal || orderFound.meal,
-      size: req.body.size || orderFound.size,
-      order: req.body.order || orderFound.order,
-      price: req.body.price || orderFound.price,
-      customerEmail: req.body.customerEmail || orderFound.customerEmail,
-      imageUrl: req.body.imageUrl || orderFound.imageUrl
-    };
-
-    _orderData.default.splice(orderIndex, 1, updatedOrder);
-
-    return res.status(200).send({
-      status: 200,
-      message: 'Order has been successfully modified',
-      data: [updatedOrder]
     });
   }
 };
